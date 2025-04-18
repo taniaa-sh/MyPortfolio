@@ -31,13 +31,13 @@ function HeroSection() {
         </button>
        </div>
        </div>     
-       <div className='place-self-center'>
+       <div className='place-self-center !rounded-full'>
         <Image
-        src="/images/20240326_144547.jpg"
+        src="/images/IMG_0637.jpg"
         alt="hero"
-        width={700}
-        height={500}
-        className=" rounded-full mt-24 border-6 border-pink-200"
+        width={800}
+        height={800}
+        className="w-[600px] h-[500px] lg:w-[1600px] lg:h-[400px] xl:w-[900px] xl:h-[400px]  md:w-[1500px] md:h-[300px] !rounded-full mt-24 border-6 border-pink-200"
       />
        </div>
        </div>
