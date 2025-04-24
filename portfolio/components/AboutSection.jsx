@@ -24,7 +24,7 @@ const Tab_Data = [
         content: (
             <ul className="list-disc pl-2">
                 <li>React</li>
-                <li>Tailwind</li>
+                <li>kkkk</li>
                 <li>Next js</li>
                 <li>java script</li>
                 <li>Type script</li>
