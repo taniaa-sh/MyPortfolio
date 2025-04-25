@@ -6,7 +6,7 @@ import { TypeAnimation } from 'react-type-animation';
 function HeroSection() {
   return (
     <section>
-       <div className='flex flex-col md:flex-row gap-4 sm:gap-8'>
+       <div className='flex flex-col md:flex-row gap-10 sm:gap-8'>
        <div className='place-self-center text-center sm:text-left mt-10'>
        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold !mb-7">
         <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>Hello, I'm </span>
@@ -23,7 +23,9 @@ function HeroSection() {
       repeat={Infinity}
     />
         </h1>
-       <p className='text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur atque cumque esse doloremque quibusdam vel suscipit, nemo quaerat magni optio consectetur, architecto exercitationem accusantium pariatur in possimus veniam ad?</p>
+       <p className='text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 !text-wrap'>
+       I'm a passionate and creative web developer with a strong foundation in modern front-end technologies. I specialize in building responsive, user-friendly websites with <strong>React</strong>, <strong>Next.js</strong>, and <strong>Tailwind CSS</strong>. I love bringing ideas to life through code and am always eager to learn new skills to improve my craft.
+      </p>
        <div className='mt-6'>
         <button className='w-full bg-gradient-to-br from-blue-500 via-purple-500  to-pink-500 sm:w-fit px-6 py-3 rounded-full mr-4 bg-white hover:bg-slate-200 text-white'>Hire Me</button>
         <button className='w-full sm:w-fit px-1 py-1 rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500  to-pink-500 hover:bg-slate-800 text-white mt-3'>
