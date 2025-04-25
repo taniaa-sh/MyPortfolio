@@ -5,9 +5,11 @@ import Image from "next/image";
 
 const EmailSection = ({active,selectTab,children}) => {
     return (
-        <section className=" grid md:grid-cols-2 my-12 md:my-12 py-24 gap-6 relative" id="contact">
+        <div className="flex flex-col mt-16">
+           <h4 className="font-semibold text-4xl text-center text-pink-400" id="projects">contact me</h4>
+          <section className="grid md:grid-cols-2 py-12 gap-6 relative" id="contact">
             {/* <div className="radial-purple rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div> */}
-            <div className="z-10">
+            <div className="">
                 <h5 className="text-xl font-bold text-white my-2">lets conect</h5>
                 <p className="text-[#ADB7BE] mb-4 max-w-md">
                     {""}
@@ -61,6 +63,7 @@ const EmailSection = ({active,selectTab,children}) => {
                 </form>
             </div>
         </section>
+        </div>
     );
 }
 

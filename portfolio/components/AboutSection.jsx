@@ -57,7 +57,8 @@ const AboutSection = () => {
     }
 
     return (
-        <section className="text-white" id="about">
+        <section className="text-white mt-8" id="about">
+            <h2 className="w-full text-4xl font-bold text-center text-pink-400">About me</h2>
             <div className="flex flex-col md:flex-row gap-8 items-center py-8 px-4 xl:gap-16 sm:py-14 xl:px-16">
                 {/* <Image
                 src={"/images/front-enddev1.png"}
@@ -73,7 +74,6 @@ const AboutSection = () => {
               />
             </div>
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-                    <h2 className="text-4xl font-bold text-white mb-4">About me</h2>
                     <p className="text-base lg:text-lg">                   
                       I am a passionate Front-End Developer with a strong focus on building responsive, user-friendly web applications. Currently working as a Junior Developer at Hoshmand Sepehr, I specialize in using React, Next.js, and Tailwind CSS to create modern and scalable web solutions. I have a deep understanding of JavaScript and TypeScript, and I enjoy working with Redux and React Context API for state management.
                       

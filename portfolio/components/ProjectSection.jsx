@@ -63,7 +63,7 @@ const ProjectSection = () => {
 
     return (
         <>
-        <h4 className="mb-10 font-semibold text-4xl text-center" id="projects">my projects</h4>
+        <h4 className="mb-10 font-semibold text-4xl text-center text-pink-400" id="projects">my projects</h4>
         {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
             <ProjectTag
             onClick={handleTagChange}
