@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer utilities {
+  .radial-purple {
+    background: radial-gradient(ellipse at center, #6B21A8 0%, transparent 70%);
+  }
+}
