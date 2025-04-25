@@ -1,6 +1,6 @@
 "use client"
-import Image 
-from "next/image";
+import Lottie from "lottie-react";
+import animationData from "@/app/animation/Animation - 1745590936190.json";
 import { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 
@@ -10,11 +10,17 @@ const Tab_Data = [
         id: "skills",
         content: (
             <ul className="list-disc pl-2">
-                <li>React</li>
-                <li>Tailwind</li>
-                <li>Next js</li>
-                <li>java script</li>
-                <li>Type script</li>
+                 <li>React</li>
+                 <li>Next.js</li>
+                 <li>JavaScript (ES6+)</li>
+                 <li>TypeScript</li>
+                 <li>Tailwind CSS</li>
+                 <li>HTML5 & CSS3</li>
+                 <li>Responsive Design & Mobile-First Development</li>
+                 <li>Version Control with Git & GitHub</li>
+                 <li>API Integration (RESTful APIs, GraphQL)</li>
+                 <li>State Management (Redux, Context API)</li>
+                 <li>UI/UX Design Principles</li>
             </ul>
         )
     },
@@ -23,11 +29,8 @@ const Tab_Data = [
         id: "education",
         content: (
             <ul className="list-disc pl-2">
-                <li>React</li>
-                <li>kkkk</li>
-                <li>Next js</li>
-                <li>java script</li>
-                <li>Type script</li>
+                <li>
+                Master of Technology and Information Management</li>
             </ul>
         )
     },
@@ -36,11 +39,7 @@ const Tab_Data = [
         id: "Experience",
         content: (
             <ul className="list-disc pl-2">
-                <li>React</li>
-                <li>Tailwind</li>
-                <li>Next js</li>
-                <li>java script</li>
-                <li>Type script</li>
+                <li>Front-End Developer at Hoshmand Sepehr</li>
             </ul>
         )
     },
@@ -58,18 +57,30 @@ const AboutSection = () => {
     }
 
     return (
-        <section className="text-white">
+        <section className="text-white" id="about">
             <div className="flex flex-col md:flex-row gap-8 items-center py-8 px-4 xl:gap-16 sm:py-14 xl:px-16">
-                <Image
+                {/* <Image
                 src={"/images/front-enddev1.png"}
                 width={500}
                 height={500}
                 alt=""
                 className="rounded-full"
-                />
+                /> */}
+            <div className="flex-1 flex justify-center items-center">
+              <Lottie 
+                animationData={animationData} 
+                className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] aspect-square rounded-full" 
+              />
+            </div>
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                     <h2 className="text-4xl font-bold text-white mb-4">About me</h2>
-                    <p className="text-base lg:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure possimus ipsa deleniti, quia dolores et ab exercitationem, quidem suscipit quos vel voluptatibus voluptates perspiciatis quae voluptatem magni saepe molestias reprehenderit?</p>
+                    <p className="text-base lg:text-lg">                   
+                      I am a passionate Front-End Developer with a strong focus on building responsive, user-friendly web applications. Currently working as a Junior Developer at Hoshmand Sepehr, I specialize in using React, Next.js, and Tailwind CSS to create modern and scalable web solutions. I have a deep understanding of JavaScript and TypeScript, and I enjoy working with Redux and React Context API for state management.
+                      
+                      With a keen interest in UI/UX design principles, I strive to create visually appealing and intuitive interfaces that enhance user experiences. As a constant learner, I am always eager to stay updated with the latest front-end technologies and best practices.
+                      
+                      I am passionate about problem-solving and collaborating with teams to bring innovative ideas to life. Currently, I am preparing to take the next step in my career by transitioning from a junior to a mid-level 
+                    </p>
                     <div className="flex flex-row mt-8">
                         <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"} >skills</TabButton>
                         <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"} >education</TabButton>
