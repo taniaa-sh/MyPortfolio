@@ -63,8 +63,8 @@ const ProjectSection = () => {
 
     return (
         <>
-        <h4 className="mb-10 font-semibold text-4xl text-center">my projects</h4>
-        <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+        <h4 className="mb-10 font-semibold text-4xl text-center" id="projects">my projects</h4>
+        {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
             <ProjectTag
             onClick={handleTagChange}
             name="All"
@@ -80,7 +80,7 @@ const ProjectSection = () => {
             name="Mobile"
             isSelected={tag === "Mobile"}
             />
-        </div>
+        </div> */}
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">{projectsData.map((project) => 
             <ProjectCard 
             key={project.id} 
