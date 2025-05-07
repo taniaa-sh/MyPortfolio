@@ -24,8 +24,14 @@ function Navbar() {
 
     const [navbarOpen,setNavbarOpen] = useState(false)
 
+    // fixed top-4 left-8 right-8 z-50 flex-row items-center justify-center gap-8 lg:gap-10 xl:gap-12 select-none backdrop-filter py-[1px] px-4 bg-brown-900/50 rounded-3xl backdrop-blur-[5px]
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-500/20 backdrop-blur-md shadow-sm border-b border-pink-300">
+    <nav 
+      className="fixed top-0 left-0 right-0 z-50 bg-gray-500/50 backdrop-blur-[5px] shadow-sm border-b border-pink-300"
+      style={{
+        backdropFilter: "blur(5px)"
+      }}
+    >
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link href="/">
           <span className="text-xl md:text-5xl font-semibold text-white">Portfolio</span>

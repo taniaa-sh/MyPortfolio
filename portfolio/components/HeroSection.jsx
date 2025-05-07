@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import { useState } from 'react';
+import {  useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 function HeroSection() {
@@ -14,20 +14,24 @@ function HeroSection() {
   return (
     <section>
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
-          <div className="bg-gradient-to-br z-50 from-purple-600 via-purple-800 to-black text-white p-6 rounded-lg max-w-sm w-full">
-            <h2 className="text-2xl mb-4">Contact Information</h2>
-            <p>Email: taniashafiee78@gmail.com</p>
-            <p>Phone: 09332080083</p>
-            <p>LinkedIn: linkedin.com/in/tania-shafiee</p>
-            <button
-              className="cursor-pointer mt-4 w-full sm:w-fit px-4 py-2 rounded-full bg-purple-500 hover:bg-purple-600 text-white"
-              onClick={handleCloseModal}
-            >
-              Close
-            </button>
-          </div>
-        </div>
+        // <div className="fixed inset-0 bg-pink-200/40 flex justify-center items-center z-10" 
+        // style={{
+        //   backdropFilter: "blur(5px)"
+        // }}>
+        //   <div className="bg-gradient-to-br z-50 from-purple-600 via-purple-800 to-black text-white p-6 rounded-lg max-w-sm w-full">
+        //     <h2 className="text-2xl mb-4">Contact Information</h2>
+        //     <p>Email: taniashafiee78@gmail.com</p>
+        //     <p>Phone: 09332080083</p>
+        //     <p>LinkedIn: linkedin.com/in/tania-shafiee</p>
+        //     <button
+        //       className="cursor-pointer mt-4 w-full sm:w-fit px-4 py-2 rounded-full bg-purple-500 hover:bg-purple-600 text-white"
+        //       onClick={handleCloseModal}
+        //     >
+        //       Close
+        //     </button>
+        //   </div>
+        // </div>
+        <HireMeModal />
       )}
        <div className='flex flex-col md:flex-row gap-10 sm:gap-8'>
        <div className='place-self-center text-center sm:text-left mt-10'>
