@@ -21,7 +21,7 @@ const EmailSection = () => {
 
 
   return (
-    <div className="flex flex-col mt-16">
+    <div className="flex flex-col !mt-16">
       <h4
         className="font-semibold text-4xl text-center text-pink-400"
         id="projects"
@@ -35,7 +35,7 @@ const EmailSection = () => {
         {/* <div className="radial-purple rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div> */}
         <div className="">
           <h5 className="text-xl font-bold text-white my-2">lets conect</h5>
-          <p className="text-[#ADB7BE] mb-4 max-w-md">
+          <p className="text-[#ADB7BE] !mb-4 max-w-md">
             {""}
             I'm currently looking for a new opportunities, my inbox is always
             open. Ehether you have a question or just want to say hi, I' ll try
@@ -64,7 +64,7 @@ const EmailSection = () => {
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <label
               htmlFor="email"
-              className="text-white block mb-1 text-sm font-medium"
+              className="text-white block !mb-1 text-sm font-medium"
             >
               Your Email
             </label>
@@ -79,7 +79,7 @@ const EmailSection = () => {
 
             <label
               htmlFor="subject"
-              className="text-white block mb-1 text-sm font-medium"
+              className="text-white block !mb-1 text-sm font-medium"
             >
               Subject
             </label>
@@ -92,10 +92,10 @@ const EmailSection = () => {
               className="p-2.5 rounded-lg bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm block w-full"
             />
 
-            <div className="mb-6">
+            <div className="!mb-6">
               <label
                 htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
+                className="text-white block text-sm !mb-2 font-medium"
               >
                 Message
               </label>

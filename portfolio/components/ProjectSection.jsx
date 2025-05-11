@@ -1,52 +1,51 @@
 "use client"
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
-import ProjectTag from "./ProjectTag";
 
 const projectsData = [
     {
         id: 1,
-        title: "React portfolio",
-        description: "project1",
-        image:"/images/front-enddev1.png",
+        title: "project 1",
+        description: "cartable site hoshmandSepehr",
+        image:"/images/cartable.png",
         tag: ["all","web"],
-        gitUrl:"/",
+        gitUrl:"",
         previewUrl: "/"
     },
     {
         id: 2,
-        title: "React portfolio",
-        description: "project2",
-        image:"/images/front-enddev1.png",
+        title: "project 2",
+        description: "web site hoshmand sepehr",
+        image:"/images/hoshmandSepehr.png",
         tag: ["All","Web"],
-        gitUrl:"/",
-        previewUrl: "/"
+        gitUrl:"",
+        previewUrl: "https://stsepehr.ir/"
     },
     {
         id: 3,
-        title: "React portfolio",
-        description: "project3",
-        image:"/images/front-enddev1.png",
+        title: "project 3",
+        description: "panel hoshmand sepehr",
+        image:"/images/panel.png",
         tag: ["all","web"],
-        gitUrl:"/",
-        previewUrl: "/"
+        gitUrl:"",
+        previewUrl: "https://setpanel.bsi.ir/"
     },
     {
         id: 4,
-        title: "React portfolio",
-        description: "project4",
-        image:"/images/front-enddev1.png",
+        title: "project 4",
+        description: "set webSite",
+        image:"/images/set.png",
         tag: ["all","web"],
-        gitUrl:"/",
-        previewUrl: "/"
+        gitUrl:"",
+        previewUrl: "https://set.bsi.ir/"
     },
     {
         id: 5,
-        title: "React portfolio",
-        description: "project5",
+        title: "project 5",
+        description: "movie site",
         image:"/images/front-enddev1.png",
         tag: ["all","web"],
-        gitUrl:"/",
+        gitUrl:"",
         previewUrl: "/"
     },
 ]
@@ -63,7 +62,7 @@ const ProjectSection = () => {
 
     return (
         <>
-        <h4 className="mb-10 font-semibold text-4xl text-center text-pink-400" id="projects">my projects</h4>
+        <h4 className="!mb-10 font-semibold text-4xl text-center text-pink-400" id="projects">my projects</h4>
         {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
             <ProjectTag
             onClick={handleTagChange}

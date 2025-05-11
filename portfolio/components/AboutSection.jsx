@@ -57,7 +57,7 @@ const AboutSection = () => {
     }
 
     return (
-        <section className="text-white mt-8" id="about">
+        <section className="text-white !mt-8" id="about">
             <h2 className="w-full text-4xl font-bold text-center text-pink-400">About me</h2>
             <div className="flex flex-col md:flex-row gap-8 items-center py-8 px-4 xl:gap-16 sm:py-14 xl:px-16">
                 {/* <Image
@@ -73,7 +73,7 @@ const AboutSection = () => {
                 className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] aspect-square rounded-full" 
               />
             </div>
-                <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+                <div className="!mt-4 md:mt-0 text-left flex flex-col h-full">
                     <p className="text-base lg:text-lg">                   
                       I am a passionate Front-End Developer with a strong focus on building responsive, user-friendly web applications. Currently working as a Junior Developer at Hoshmand Sepehr, I specialize in using React, Next.js, and Tailwind CSS to create modern and scalable web solutions. I have a deep understanding of JavaScript and TypeScript, and I enjoy working with Redux and React Context API for state management.
                       
@@ -81,12 +81,12 @@ const AboutSection = () => {
                       
                       I am passionate about problem-solving and collaborating with teams to bring innovative ideas to life. Currently, I am preparing to take the next step in my career by transitioning from a junior to a mid-level 
                     </p>
-                    <div className="flex flex-row mt-8">
+                    <div className="flex flex-row !mt-8">
                         <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"} >skills</TabButton>
                         <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"} >education</TabButton>
                         <TabButton selectTab={() => handleTabChange("Experience")} active={tab === "Experience"} >Experience</TabButton>
                     </div>
-                    <div className="mt-8">{Tab_Data.find((t) => t.id === tab).content}</div>
+                    <div className="!mt-8">{Tab_Data.find((t) => t.id === tab).content}</div>
                 </div>
             </div>
         </section>
