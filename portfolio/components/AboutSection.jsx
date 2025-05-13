@@ -1,6 +1,6 @@
 "use client"
 import Lottie from "lottie-react";
-import animationData from "@/app/animation/Animation - 1745590936190.json";
+import animationData from "@/app/animation/Animation - 1747122962556 (8).json";
 import { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 
