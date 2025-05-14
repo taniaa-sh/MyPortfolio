@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import HireMeModal from "./HireMeModal";
 
 function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,10 +14,13 @@ function HeroSection() {
   return (
     <section>
       {isModalOpen && (
-        // <div className="fixed inset-0 bg-pink-200/40 flex justify-center items-center z-10"
-        // style={{
-        //   backdropFilter: "blur(5px)"
-        // }}>
+        // <div
+        //   className="fixed inset-0 bg-purple-200/40 flex justify-center items-center z-10"
+        //   style={{
+        //     backdropFilter: "blur(5px)",
+        //   }}
+        //   onClick={handleCloseModal}
+        // >
         //   <div className="bg-gradient-to-br z-50 from-purple-600 via-purple-800 to-black text-white p-6 rounded-lg max-w-sm w-full">
         //     <h2 className="text-2xl !mb-4">Contact Information</h2>
         //     <p>Email: taniashafiee78@gmail.com</p>
@@ -30,7 +34,7 @@ function HeroSection() {
         //     </button>
         //   </div>
         // </div>
-        <HireMeModal />
+        <HireMeModal setShowModal={handleCloseModal} />
       )}
       <div className="flex flex-col md:flex-row gap-10 sm:gap-8">
         <div className="place-self-center text-center sm:text-left !mt-10">
