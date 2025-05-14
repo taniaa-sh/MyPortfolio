@@ -39,7 +39,7 @@ const EmailSection = () => {
       </motion.h4>
 
       <motion.section
-        className="grid md:grid-cols-2 py-12 gap-6 relative"
+        className="grid xl:grid-cols-2 py-12 !gap-6 md:gap-12 relative"
         id="contact"
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
@@ -73,13 +73,15 @@ const EmailSection = () => {
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
+          className="ml-10 md:ml-0"
         >
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 justify-center items-center self-center w-full">
             <motion.div
               whileInView={{ opacity: 1, x: -50 }}
               initial={{ opacity: 0, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true }}
+              className="w-full"
             >
               <label
                 htmlFor="email"
@@ -102,6 +104,7 @@ const EmailSection = () => {
               initial={{ opacity: 0, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
               viewport={{ once: true }}
+              className="w-full"
             >
               <label
                 htmlFor="subject"
@@ -120,11 +123,11 @@ const EmailSection = () => {
             </motion.div>
 
             <motion.div
-              whileInView={{ opacity: 1, x: -50 }}
-              initial={{ opacity: 0, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-              viewport={{ once: true }}
-              className="!mb-6"
+              // whileInView={{ opacity: 1, x: -50 }}
+              // initial={{ opacity: 0, x: 0 }}
+              // transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+              // viewport={{ once: true }}
+              className="!mb-6 w-full"
             >
               <label
                 htmlFor="message"
@@ -143,16 +146,18 @@ const EmailSection = () => {
               />
             </motion.div>
 
-            <motion.button
-             whileInView={{ opacity: 1, x: -50 }}
-              initial={{ opacity: 0, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-              viewport={{ once: true }}
+           <div className="w-full mr-24">
+             <motion.button
+            //  whileInView={{ opacity: 1, x: -50 }}
+            //   initial={{ opacity: 0, x: 0 }}
+            //   transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            //   viewport={{ once: true }}
               type="submit"
-              className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full cursor-pointer"
+              className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 !px-5 rounded-lg w-full cursor-pointer"
             >
               Send Message
             </motion.button>
+           </div>
           </form>
         </motion.div>
       </motion.section>
