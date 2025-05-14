@@ -12,7 +12,7 @@ const projectsData = [
     tag: ["all", "web"],
     gitUrl: "",
     hasVideo: true,
-    videoSrc: "",
+    videoSrc: "https://arashaltafi.ir/url_sample/mp4.mp4",
   },
   {
     id: 2,

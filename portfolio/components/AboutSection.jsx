@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Lottie from "lottie-react";
 import animationData from "@/app/animation/Animation - 1747122962556 (8).json";
