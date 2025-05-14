@@ -137,12 +137,15 @@ const EmailSection = () => {
               />
             </motion.div>
 
-            <button
+            <motion.button
+             whileInView={{ opacity: 1, x: -50 }}
+              initial={{ opacity: 0, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
               type="submit"
               className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full cursor-pointer"
             >
               Send Message
-            </button>
+            </motion.button>
           </form>
         </motion.div>
       </motion.section>
