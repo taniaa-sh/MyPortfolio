@@ -44,11 +44,13 @@ const EmailSection = () => {
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
       >
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
           <h5 className="text-xl font-bold text-white my-2">lets conect</h5>
           <p className="text-[#ADB7BE] !mb-4 max-w-md">
@@ -70,12 +72,14 @@ const EmailSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <motion.div
               whileInView={{ opacity: 1, x: -50 }}
               initial={{ opacity: 0, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true }}
             >
               <label
                 htmlFor="email"
@@ -97,6 +101,7 @@ const EmailSection = () => {
               whileInView={{ opacity: 1, x: -50 }}
               initial={{ opacity: 0, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+              viewport={{ once: true }}
             >
               <label
                 htmlFor="subject"
@@ -118,6 +123,7 @@ const EmailSection = () => {
               whileInView={{ opacity: 1, x: -50 }}
               initial={{ opacity: 0, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+              viewport={{ once: true }}
               className="!mb-6"
             >
               <label
@@ -141,6 +147,7 @@ const EmailSection = () => {
              whileInView={{ opacity: 1, x: -50 }}
               initial={{ opacity: 0, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+              viewport={{ once: true }}
               type="submit"
               className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full cursor-pointer"
             >
