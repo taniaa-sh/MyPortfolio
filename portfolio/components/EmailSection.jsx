@@ -73,7 +73,7 @@ const EmailSection = () => {
           initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="ml-10 md:ml-0"
+          className="ml-10 xl:ml-0"
         >
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 justify-center items-center self-center w-full">
             <motion.div
@@ -123,10 +123,10 @@ const EmailSection = () => {
             </motion.div>
 
             <motion.div
-              // whileInView={{ opacity: 1, x: -50 }}
-              // initial={{ opacity: 0, x: 0 }}
-              // transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-              // viewport={{ once: true }}
+              whileInView={{ opacity: 1, x: -50 }}
+              initial={{ opacity: 0, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+              viewport={{ once: true }}
               className="!mb-6 w-full"
             >
               <label
