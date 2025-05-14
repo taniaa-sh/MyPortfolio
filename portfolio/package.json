@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "framer-motion": "^12.11.0",
     "lottie-react": "^2.4.1",
     "next": "15.3.0",
     "next-nprogress-bar": "^2.4.7",
