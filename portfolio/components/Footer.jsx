@@ -10,7 +10,7 @@ const Footer = () => {
             © {new Date().getFullYear()} همه‌ی حقوق محفوظ است.
           </p> */}
         </div>
-        <div className="flex gap-4 !mt-4 md:!mt-0">
+        <div className="flex gap-4 md:!mt-0">
           <Link
             href="https://github.com/taniaa-sh"
             target="_blank"
