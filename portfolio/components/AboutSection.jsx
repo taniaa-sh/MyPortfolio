@@ -17,12 +17,12 @@ const Tab_Data = [
         <li>JavaScript (ES6+)</li>
         <li>TypeScript</li>
         <li>Tailwind CSS</li>
-        <li>HTML5 & CSS3</li>
+        {/* <li>HTML5 & CSS3</li> */}
         <li>Responsive Design & Mobile-First Development</li>
         <li>Version Control with Git & GitHub</li>
-        <li>API Integration (RESTful APIs, GraphQL)</li>
+        {/* <li>API Integration (RESTful APIs, GraphQL)</li> */}
         <li>State Management (Redux, Context API)</li>
-        <li>UI/UX Design Principles</li>
+        {/* <li>UI/UX Design Principles</li> */}
       </ul>
     ),
   },
@@ -59,7 +59,7 @@ const AboutSection = () => {
   return (
     <section className="text-white !mt-8" id="about">
       <motion.h2
-        className="w-full text-4xl font-bold text-center text-pink-400"
+        className="w-full text-2xl md:text-4xl font-bold text-center text-pink-400"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

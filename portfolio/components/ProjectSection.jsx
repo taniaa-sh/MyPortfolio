@@ -69,7 +69,7 @@ const ProjectSection = () => {
        initial={{ opacity: 0, x: 0 }}
        viewport={{ once: true }}
        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="!mb-10 font-semibold text-4xl text-center text-pink-400"
+        className="!mb-10 font-semibold text-2xl md:text-4xl text-center text-pink-400"
         id="projects"
       >
         my projects
