@@ -1,8 +1,10 @@
 "use client";
+
 import Lottie from "lottie-react";
 import animationData from "@/app/animation/Animation - 1747122962556 (8).json";
 import { useState, useTransition } from "react";
 import TabButton from "./TabButton";
+import { motion } from "framer-motion";
 
 const Tab_Data = [
   {
@@ -56,24 +58,43 @@ const AboutSection = () => {
 
   return (
     <section className="text-white !mt-8" id="about">
-      <h2 className="w-full text-4xl font-bold text-center text-pink-400">
+      <motion.h2
+        className="w-full text-4xl font-bold text-center text-pink-400"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         About me
-      </h2>
-      <div className="flex flex-col md:flex-row gap-8 items-center py-8 px-4 xl:gap-16 sm:py-14 xl:px-16">
-        {/* <Image
-                src={"/images/front-enddev1.png"}
-                width={500}
-                height={500}
-                alt=""
-                className="rounded-full"
-                /> */}
-        <div className="flex-1 flex justify-center items-center">
+      </motion.h2>
+
+      <motion.div
+        className="flex flex-col md:flex-row gap-8 items-center py-8 px-4 xl:gap-16 sm:py-14 xl:px-16"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.div
+          className="flex-1 flex justify-center items-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <Lottie
             animationData={animationData}
             className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] aspect-square rounded-full"
           />
-        </div>
-        <div className="!mt-4 md:mt-0 text-left flex flex-col h-full">
+        </motion.div>
+
+        <motion.div
+          className="!mt-4 md:mt-0 text-left flex flex-col h-full"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <p className="text-base lg:text-lg text-justify">
             I am a passionate Front-End Developer with a strong focus on
             building responsive, user-friendly web applications. Currently
@@ -90,7 +111,14 @@ const AboutSection = () => {
             preparing to take the next step in my career by transitioning from a
             junior to a mid-level
           </p>
-          <div className="flex flex-row !mt-8 !cursor-pointer">
+
+          <motion.div
+            className="flex flex-row !mt-8 !cursor-pointer"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
@@ -109,12 +137,19 @@ const AboutSection = () => {
             >
               Experience
             </TabButton>
-          </div>
-          <div className="!mt-8">
+          </motion.div>
+
+          <motion.div
+            className="!mt-8"
+            key={tab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
             {Tab_Data.find((t) => t.id === tab).content}
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
