@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
+import { motion } from "framer-motion";
 
 const projectsData = [
   {
@@ -11,6 +12,7 @@ const projectsData = [
     tag: ["all", "web"],
     gitUrl: "",
     hasVideo: true,
+    videoSrc: "",
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ const projectsData = [
     tag: ["all", "web"],
     gitUrl: "",
     hasVideo: true,
+    videoSrc: "  ",
   },
   {
     id: 4,
@@ -43,10 +46,9 @@ const projectsData = [
     id: 5,
     title: "project 5",
     description: "movie site",
-    image: "/images/front-enddev1.png",
+    image: "/images/movie.png",
     tag: ["all", "web"],
-    gitUrl: "/ت",
-    hasVideo: true,
+    gitUrl: "https://github.com/taniaa-sh/HyperMovie/tree/master",
   },
 ];
 const ProjectSection = () => {
@@ -62,12 +64,16 @@ const ProjectSection = () => {
 
   return (
     <>
-      <h4
+      <motion.h4
+       whileInView={{ opacity: 1, x: -50 }}
+       initial={{ opacity: 0, x: 0 }}
+       viewport={{ once: true }}
+       transition={{ duration: 0.6, ease: "easeOut" }}
         className="!mb-10 font-semibold text-4xl text-center text-pink-400"
         id="projects"
       >
         my projects
-      </h4>
+      </motion.h4>
       {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
             <ProjectTag
             onClick={handleTagChange}
@@ -87,15 +93,23 @@ const ProjectSection = () => {
         </div> */}
       <div className="grid md:grid-cols-3 gap-8 md:gap-12">
         {projectsData.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.image}
-            gitUrl={project.gitUrl}
-            previewUrl={project.previewUrl}
-            hasVideo={project.hasVideo}
-          />
+           <motion.div
+              key={project.id}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+              hasVideo={project.hasVideo}
+              videoSrc={project.videoSrc}
+            />
+          </motion.div>
         ))}
       </div>
     </>
