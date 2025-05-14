@@ -45,9 +45,9 @@ const ProjectCard = ({
             ) : (
               <Link
                 href={gitUrl ? gitUrl : ""}
-                className="h-14 w-14 !mr-2 border-3 relative rounded-full border-white hover:border-pink-500 group/link"
+                className="h-14 w-14 !mr-2 border-3 rounded-full border-white hover:border-pink-500 group/link flex items-center justify-center"
               >
-                <CodeBracketIcon className="h-10 w-10 text-white hover:text-pink-500 cursor-pointer absolute top-2 left-1.5 -translate-x-1/2 -translate-y-1/2" />
+                <CodeBracketIcon className="h-8 w-8 text-white hover:text-pink-500 group-hover/link:text-white" />
               </Link>
             )}
             {hasVideo && (
@@ -55,15 +55,19 @@ const ProjectCard = ({
                 onClick={() => setIsModalOpen(true)}
                 className="h-14 w-14 !mr-2 border-3 relative rounded-full border-white hover:border-pink-500 group/link"
               >
-                <PlayIcon className="h-10 w-10 text-white hover:text-pink-500 cursor-pointer absolute top-2 left-1.5 -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <PlayIcon className="h-8 w-8 text-white hover:text-pink-500 cursor-pointer group-hover/link:text-white" />
+                </div>
               </button>
             )}
             {previewUrl ? (
               <Link
                 href={previewUrl}
-                className="h-14 w-14 border-3 relative rounded-full border-white hover:border-pink-500 group/link"
+                className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link"
               >
-                <EyeIcon className="h-10 w-10 text-white absolute hover:text-pink-500 !top-2 !left-1.5 transform -!translate-x-1/2 -!translate-y-1/2 cursor-pointer group-hover/link:text-white" />
+                <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
+                  <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
+                </div>
               </Link>
             ) : (
               ""
