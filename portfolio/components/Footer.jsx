@@ -26,6 +26,7 @@ const Footer = () => {
             LinkedIn
           </Link>
           <Link
+            target="_blank"
             href="mailto:taniashafiee78@gmail.com"
             className="hover:text-purple-400 transition"
           >
