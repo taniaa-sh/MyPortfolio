@@ -10,9 +10,8 @@ const projectsData = [
     description: "cartable site hoshmandSepehr",
     image: "/images/cartable.png",
     tag: ["all", "web"],
-    gitUrl: "",
-    hasVideo: true,
-    videoSrc: "https://arashaltafi.ir/url_sample/mp4.mp4",
+    previewModal: true,
+    imgUrl: "/images/cartable.png", 
   },
   {
     id: 2,
@@ -20,7 +19,6 @@ const projectsData = [
     description: "web site hoshmand sepehr",
     image: "/images/hoshmandSepehr.png",
     tag: ["All", "Web"],
-    gitUrl: "",
     previewUrl: "https://stsepehr.ir/",
   },
   {
@@ -29,9 +27,8 @@ const projectsData = [
     description: "panel hoshmand sepehr",
     image: "/images/panel.png",
     tag: ["all", "web"],
-    gitUrl: "",
-    hasVideo: true,
-    videoSrc: "  ",
+    previewModal: true,
+    imgUrl: "/images/panel.png", 
   },
   {
     id: 4,
@@ -40,7 +37,9 @@ const projectsData = [
     image: "/images/set.png",
     tag: ["all", "web"],
     gitUrl: "",
+    hasVideo: true,
     previewUrl: "https://set.bsi.ir/",
+    videoSrc: "https://arashaltafi.ir/url_sample/mp4.mp4",
   },
   {
     id: 5,
@@ -108,6 +107,7 @@ const ProjectSection = () => {
               previewUrl={project.previewUrl}
               hasVideo={project.hasVideo}
               videoSrc={project.videoSrc}
+              previewModal={project.previewModal}
             />
           </motion.div>
         ))}

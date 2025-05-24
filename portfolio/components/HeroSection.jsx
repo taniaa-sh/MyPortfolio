@@ -38,7 +38,7 @@ function HeroSection() {
       )}
       <div className="flex flex-col md:flex-row gap-10 sm:gap-8">
         <div className="place-self-center text-center sm:text-left !mt-10">
-          <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold !mb-7">
+          {/* <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold !mb-7">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
               Hello, I'm{" "}
             </span>
@@ -49,7 +49,7 @@ function HeroSection() {
               speed={50}
               repeat={Infinity}
             />
-          </h1>
+          </h1> */}
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl !mb-6 !text-wrap">
             I'm a passionate and creative web developer with a strong foundation
             in modern front-end technologies. I specialize in building
@@ -74,12 +74,12 @@ function HeroSection() {
         </div>
         <div className="place-self-center !rounded-full">
           <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-6 border-pink-200 !mt-20">
-            <Image
+            {/* <Image
               src="/images/IMG_0637.jpg"
               alt="hero"
               fill
               className="object-cover"
-            />
+            /> */}
           </div>
         </div>
       </div>

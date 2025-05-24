@@ -7,6 +7,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import VideoModal from "./VideoModal";
+import PictureModal from "./PictureModal";
 
 const ProjectCard = ({
   imgUrl,
@@ -16,8 +17,10 @@ const ProjectCard = ({
   previewUrl,
   hasVideo,
   videoSrc,
+  previewModal,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [pictureModal,setPictureModal] = useState(false);
 
   return (
     <>
@@ -28,6 +31,14 @@ const ProjectCard = ({
           videoSrc={videoSrc}
         />
       )}
+      {
+        pictureModal && (
+          <PictureModal 
+          onClose={() => setPictureModal(false)}
+          isOpen={pictureModal}
+          />
+        )
+      }
       <div className="w-full overflow-hidden">
         <div className="relative h-60 md:h-80 group rounded-t-2xl !overflow-hidden">
           <img
@@ -41,9 +52,17 @@ const ProjectCard = ({
               backdropFilter: "blur(2px)",
             }}
           >
-            {gitUrl == "" ? (
-              ""
-            ) : (
+            {previewModal && (
+              <div
+                onClick={() => setPictureModal(true)}
+                className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
+              >
+                <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
+                  <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
+                </div>
+              </div>
+            )}
+            {gitUrl && (
               <Link
                 href={gitUrl ? gitUrl : ""}
                 className="h-14 w-14 !mr-2 border-3 rounded-full border-white hover:border-pink-500 group/link flex items-center justify-center"
@@ -61,7 +80,7 @@ const ProjectCard = ({
                 </div>
               </button>
             )}
-            {previewUrl ? (
+            {previewUrl && (
               <Link
                 href={previewUrl}
                 className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link"
@@ -70,8 +89,6 @@ const ProjectCard = ({
                   <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
                 </div>
               </Link>
-            ) : (
-              ""
             )}
           </div>
         </div>
