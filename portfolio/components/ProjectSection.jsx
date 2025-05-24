@@ -27,7 +27,6 @@ const projectsData = [
     description: "panel hoshmand sepehr",
     image: "/images/panel.png",
     tag: ["all", "web"],
-    previewModal: true,
     imgUrl: "/images/panel.png", 
   },
   {
@@ -108,6 +107,7 @@ const ProjectSection = () => {
               hasVideo={project.hasVideo}
               videoSrc={project.videoSrc}
               previewModal={project.previewModal}
+              id={project.id}
             />
           </motion.div>
         ))}

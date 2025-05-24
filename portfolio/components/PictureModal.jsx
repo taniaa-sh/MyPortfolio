@@ -2,19 +2,23 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import {
-  ArrowLeftIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
-const images = [
-  "/images/cartable.png",
-  "/images/cartable1.png",
-  "/images/cartable2.png",
-  "/images/cartable3.png",
-];
-
-const PictureModal = ({ setShowModal }) => {
+const PictureModal = ({ setShowModal, isPanel }) => {
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const images = isPanel
+    ? [
+        "/images/cartable.png",
+        "/images/cartable.png",
+
+      ]
+    : [
+        "/images/cartable.png",
+        "/images/cartable1.png",
+        "/images/cartable2.png",
+        "/images/cartable3.png",
+      ];
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
@@ -44,7 +48,7 @@ const PictureModal = ({ setShowModal }) => {
             {images.map((src, index) => (
               <Image
                 key={index}
-                alt={`cartable-${index}`}
+                alt={`modal-img-${index}`}
                 src={src}
                 width={200}
                 height={400}

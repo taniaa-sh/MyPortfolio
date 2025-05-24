@@ -18,9 +18,11 @@ const ProjectCard = ({
   hasVideo,
   videoSrc,
   previewModal,
+  id
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [pictureModal,setPictureModal] = useState(false);
+  const [pictureModal2,setPictureModal2] = useState(false);
 
   return (
     <>
@@ -36,6 +38,15 @@ const ProjectCard = ({
           <PictureModal 
           onClose={() => setPictureModal(false)}
           isOpen={pictureModal}
+          />
+        )
+      }
+            {
+        pictureModal2 && (
+          <PictureModal 
+          onClose={() => setPictureModal(false)}
+          isOpen={pictureModal}
+          isPanel
           />
         )
       }
@@ -61,6 +72,16 @@ const ProjectCard = ({
                   <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
                 </div>
               </div>
+            )}
+            {id == 3 && (
+                            <div
+                            onClick={() => setPictureModal2(true)}
+                            className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
+                          >
+                            <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
+                              <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
+                            </div>
+                          </div>
             )}
             {gitUrl && (
               <Link
