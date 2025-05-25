@@ -44,7 +44,7 @@ const ProjectCard = ({
             {
         pictureModal2 && (
           <PictureModal 
-          onClose={() => setPictureModal(false)}
+          onClose={() => setPictureModal2(false)}
           isOpen={pictureModal}
           isPanel
           />
