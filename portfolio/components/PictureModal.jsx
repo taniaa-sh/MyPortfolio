@@ -68,7 +68,7 @@ const PictureModal = ({ setShowModal, isPanel, onClose }) => {
                   <XMarkIcon className="h-8 w-8 text-white" />
                 </div>
               </button>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-y-auto overflow-x-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-y-auto overflow-x-hidden custom-scrollbar">
                 {images.map((src, index) => (
                   <motion.div
                     key={index}
