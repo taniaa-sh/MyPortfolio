@@ -10,14 +10,14 @@ const PictureModal = ({ setShowModal, isPanel, onClose }) => {
 
   const images = isPanel
     ? [
-      "/images/setPanel1.png",
-      "/images/setPanel2.png",
-      "/images/setPanel3.png",
-      "/images/setPanel4.png",
-      "/images/setPanel5.png",
-      "/images/setPanel6.png",
-      "/images/setPanel7.png",
-    ]
+        "/images/setPanel1.png",
+        "/images/setPanel2.png",
+        "/images/setPanel3.png",
+        "/images/setPanel4.png",
+        "/images/setPanel5.png",
+        "/images/setPanel6.png",
+        "/images/setPanel7.png",
+      ]
     : [
         "/images/cartable.png",
         "/images/cartable1.png",
@@ -59,7 +59,7 @@ const PictureModal = ({ setShowModal, isPanel, onClose }) => {
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
           {!selectedImage ? (
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 h-[380px] md:w-[700px] w-[230px]">
               <button
                 className="text-pink-300 cursor-pointer self-start"
                 onClick={onClose}
@@ -68,7 +68,7 @@ const PictureModal = ({ setShowModal, isPanel, onClose }) => {
                   <XMarkIcon className="h-8 w-8 text-white" />
                 </div>
               </button>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-y-auto overflow-x-hidden">
                 {images.map((src, index) => (
                   <motion.div
                     key={index}
@@ -105,7 +105,7 @@ const PictureModal = ({ setShowModal, isPanel, onClose }) => {
                 src={selectedImage}
                 width={400}
                 height={600}
-                className="rounded-xl w-[600px] h-[350px]"
+                className="rounded-xl md:w-[600px] md:h-[350px]"
               />
             </motion.div>
           )}
