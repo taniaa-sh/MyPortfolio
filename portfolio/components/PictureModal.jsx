@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 const PictureModal = ({ setShowModal, isPanel, onClose }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -100,13 +101,23 @@ const PictureModal = ({ setShowModal, isPanel, onClose }) => {
               >
                 <ArrowLeftIcon className="h-8 w-8 text-white" />
               </button>
-              <Image
-                alt="Selected"
-                src={selectedImage}
-                width={400}
-                height={600}
-                className="rounded-xl md:w-[600px] md:h-[350px]"
-              />
+              <TransformWrapper
+                wheel={{ step: 80 }}
+                doubleClick={{ disabled: false }}
+                pinch={{ step: 5 }}
+                zoomAnimation={{ animationTime: 300 }}
+                panning={{ velocityDisabled: true }}
+              >
+                <TransformComponent>
+                  <Image
+                    alt="Selected"
+                    src={selectedImage}
+                    width={800}
+                    height={800}
+                    className="rounded-xl md:w-[600px] md:h-[350px] object-contain"
+                  />
+                </TransformComponent>
+              </TransformWrapper>
             </motion.div>
           )}
         </motion.div>
