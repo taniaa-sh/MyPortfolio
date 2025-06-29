@@ -1,10 +1,9 @@
-'use client';
+"use client";
 
-import Lottie from "lottie-react";
-import animationData from "@/app/animation/Animation - 1747122962556 (8).json";
 import { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 import { motion } from "framer-motion";
+import LottieComponent from "./LottieComponent";
 
 const Tab_Data = [
   {
@@ -82,10 +81,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Lottie
-            animationData={animationData}
-            className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] aspect-square rounded-full"
-          />
+          <LottieComponent />
         </motion.div>
 
         <motion.div
