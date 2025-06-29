@@ -74,12 +74,12 @@ function HeroSection() {
         </div>
         <div className="place-self-center !rounded-full">
           <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-6 border-pink-200 !mt-20">
-            {/* <Image
+            <Image
               src="/images/IMG_0637.jpg"
               alt="hero"
               fill
               className="object-cover"
-            /> */}
+            />
           </div>
         </div>
       </div>
