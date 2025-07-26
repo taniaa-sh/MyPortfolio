@@ -7,7 +7,7 @@ import MenuOverlay from "./MenuOverlay";
 
 const navLinkItems = [
   {
-    href: "#about",
+    href: "",
     title: "about",
   },
   {
