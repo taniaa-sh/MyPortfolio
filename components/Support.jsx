@@ -85,7 +85,7 @@ const Support = () => {
   }
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center text-white">
+    <div className="w-full flex items-center justify-center text-white">
       <div className="flex flex-col w-[600px] rounded-lg border border-purple-700 overflow-hidden">
         <div className="w-full bg-purple-700 py-4 px-6 flex justify-between items-center">
           <div className="flex gap-2 items-center">
@@ -129,7 +129,7 @@ const Support = () => {
             ))}
           </div>
 
-          <div className="w-full flex gap-2 rounded-lg border border-zinc-700 px-3 py-2 bg-zinc-800">
+          <div className="w-full flex justify-evenly gap-2 rounded-lg border border-zinc-700 px-3 py-2 bg-zinc-800">
             <Image
               src="/images/Plain.svg"
               width={16}
