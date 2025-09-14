@@ -81,7 +81,7 @@ const Support = () => {
     });
 
     const data = await res.json();
-    return data?.choices?.[0]?.message?.content || "No response received.";
+    return data?.choices?.[0]?.message?.content || data?.message || "No response received.";
   }
 
   return (
