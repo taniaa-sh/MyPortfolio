@@ -83,8 +83,6 @@ export async function POST(request) {
     }),
   });
 
-  console.log(res)
-
   const data = await res.json();
   return NextResponse.json(data);
 }
