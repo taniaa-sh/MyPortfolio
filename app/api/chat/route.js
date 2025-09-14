@@ -59,7 +59,7 @@ export async function POST(request) {
   const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer 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`,
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
