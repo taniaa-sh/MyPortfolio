@@ -74,6 +74,16 @@ const projectsData = [
     gitUrl: "https://github.com/taniaa-sh/weather-conditionsr/tree/master",
     previewUrl: "https://weather-conditions.vercel.app/",
   },
+  {
+    id: 8,
+    title: "Judiciary",
+    description:
+      "A web platform for judicial services, providing real-time case management and document tracking.",
+    image: "/images/Judiciary.png",
+    tag: ["all", "web"],
+    imgUrl: "/images/Judiciary.png",
+    previewUrl: "https://eadl.hooshmandsepehrco.com/",
+  },
 ];
 
 const ProjectSection = () => {
