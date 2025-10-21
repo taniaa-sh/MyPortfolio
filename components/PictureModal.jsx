@@ -6,7 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
-const PictureModal = ({ setShowModal, isPanel, onClose }) => {
+const PictureModal = ({
+  setShowModal,
+  isPanel,
+  onClose,
+  isPanelEghtesad,
+  isOpen,
+}) => {
+  if (!isOpen) return null;
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = isPanel
@@ -19,12 +26,20 @@ const PictureModal = ({ setShowModal, isPanel, onClose }) => {
         "/images/setPanel6.png",
         "/images/setPanel7.png",
       ]
-    : [
-        "/images/cartable.png",
-        "/images/cartable1.png",
-        "/images/cartable2.png",
-        "/images/cartable3.png",
-      ];
+    : isPanelEghtesad
+      ? [
+          "/images/eghtesad.png",
+          "/images/eghtesad1.png",
+          "/images/eghtesad2.png",
+          "/images/eghtesad3.png",
+          "/images/eghtesad4.png",
+        ]
+      : [
+          "/images/cartable.png",
+          "/images/cartable1.png",
+          "/images/cartable2.png",
+          "/images/cartable3.png",
+        ];
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {

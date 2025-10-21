@@ -18,11 +18,12 @@ const ProjectCard = ({
   hasVideo,
   videoSrc,
   previewModal,
-  id
+  id,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [pictureModal,setPictureModal] = useState(false);
-  const [pictureModal2,setPictureModal2] = useState(false);
+  const [pictureModal, setPictureModal] = useState(false);
+  const [pictureModal2, setPictureModal2] = useState(false);
+  const [pictureModal3, setPictureModal3] = useState(false);
 
   return (
     <>
@@ -33,23 +34,26 @@ const ProjectCard = ({
           videoSrc={videoSrc}
         />
       )}
-      {
-        pictureModal && (
-          <PictureModal 
+      {pictureModal && (
+        <PictureModal
           onClose={() => setPictureModal(false)}
           isOpen={pictureModal}
-          />
-        )
-      }
-            {
-        pictureModal2 && (
-          <PictureModal 
+        />
+      )}
+      {pictureModal2 && (
+        <PictureModal
           onClose={() => setPictureModal2(false)}
-          isOpen={pictureModal}
+          isOpen={pictureModal2}
           isPanel
-          />
-        )
-      }
+        />
+      )}
+      {pictureModal3 && (
+        <PictureModal
+          onClose={() => setPictureModal3(false)}
+          isOpen={pictureModal3}
+          isPanelEghtesad
+        />
+      )}
       <div className="w-full overflow-hidden">
         <div className="relative h-60 md:h-80 group rounded-t-2xl !overflow-hidden">
           <img
@@ -63,7 +67,25 @@ const ProjectCard = ({
               backdropFilter: "blur(2px)",
             }}
           >
-            {previewModal && (
+            {id == 3 ? (
+              <div
+                onClick={() => setPictureModal2(true)}
+                className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
+              >
+                <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
+                  <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
+                </div>
+              </div>
+            ) : id == 6 ? (
+              <div
+                onClick={() => setPictureModal3(true)}
+                className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
+              >
+                <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
+                  <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
+                </div>
+              </div>
+            ) : id == 1 ? (
               <div
                 onClick={() => setPictureModal(true)}
                 className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
@@ -72,19 +94,10 @@ const ProjectCard = ({
                   <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
                 </div>
               </div>
-            )}
-            {id == 3 && (
-                            <div
-                            onClick={() => setPictureModal2(true)}
-                            className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
-                          >
-                            <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
-                              <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
-                            </div>
-                          </div>
-            )}
+            ) : null}
             {gitUrl && (
               <Link
+                target="_blank"
                 href={gitUrl ? gitUrl : ""}
                 className="h-14 w-14 !mr-2 border-3 rounded-full border-white hover:border-pink-500 group/link flex items-center justify-center"
               >
@@ -103,6 +116,7 @@ const ProjectCard = ({
             )}
             {previewUrl && (
               <Link
+                target="_blank"
                 href={previewUrl}
                 className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link"
               >
