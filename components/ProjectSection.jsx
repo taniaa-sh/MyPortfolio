@@ -84,6 +84,17 @@ const projectsData = [
     imgUrl: "/images/Judiciary.png",
     previewUrl: "https://eadl.hooshmandsepehrco.com/",
   },
+    {
+    id: 9,
+    title: "library",
+    description:
+    "An intuitive web platform for managing library resources, tracking books, and providing seamless.",
+    image: "/images/library.png",
+    tag: ["all", "web"],
+    imgUrl: "/images/library.png",
+    gitUrl: "https://github.com/taniaa-sh/library",
+    previewUrl: "https://tani-library.vercel.app/",
+  },
 ];
 
 const ProjectSection = () => {
