@@ -50,81 +50,88 @@ const PictureModal = ({
   };
 
   useEffect(() => {
-    document.body.style.overflowY = "hidden";
+    if (isOpen) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+
     return () => {
       document.body.style.overflowY = "auto";
     };
-  }, []);
+  }, [isOpen]);
 
   return (
     <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 p-4"
-        onClick={handleBackdropClick}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
+      {isOpen && (
         <motion.div
-          className="bg-gradient-to-br from-purple-600 via-purple-800 to-black text-white p-4 rounded-xl w-full max-w-[700px] max-h-[90vh] flex flex-col"
-          initial={{ scale: 0.8, opacity: 0, y: 50 }}
-          animate={{ scale: 1, opacity: 1, y: 0 }}
-          exit={{ scale: 0.8, opacity: 0, y: 50 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 p-4"
+          onClick={handleBackdropClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
-          <div className="flex justify-between items-center mb-2">
-            {selectedImage && (
-              <button onClick={() => setSelectedImage(null)}>
-                <ArrowLeftIcon className="h-8 w-8 text-white cursor-pointer" />
+          <motion.div
+            className="bg-gradient-to-br from-purple-600 via-purple-800 to-black text-white p-4 rounded-xl w-full max-w-[700px] max-h-[90vh] flex flex-col"
+            initial={{ scale: 0.8, opacity: 0, y: 50 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.8, opacity: 0, y: 50 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <div className="flex justify-between items-center mb-2">
+              {selectedImage && (
+                <button onClick={() => setSelectedImage(null)}>
+                  <ArrowLeftIcon className="h-8 w-8 text-white cursor-pointer" />
+                </button>
+              )}
+              <button onClick={onClose}>
+                <XMarkIcon className="h-8 w-8 text-white cursor-pointer" />
               </button>
-            )}
-            <button onClick={onClose}>
-              <XMarkIcon className="h-8 w-8 text-white cursor-pointer" />
-            </button>
-          </div>
+            </div>
 
-          {!selectedImage ? (
-            <div className="px-6 md:px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 overflow-y-auto custom-scrollbar max-h-[70vh] overflow-x-hidden">
-              {images.map((src, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+            {!selectedImage ? (
+              <div className="px-6 md:px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 overflow-y-auto custom-scrollbar max-h-[70vh] overflow-x-hidden">
+                {images.map((src, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Image
+                      alt={`modal-img-${index}`}
+                      src={src}
+                      width={200}
+                      height={200}
+                      className="w-full h-[120px] md:h-[150px] object-cover rounded-xl cursor-pointer"
+                      onClick={() => setSelectedImage(src)}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <div className="flex-1 flex justify-center items-center !cursor-zoom-in">
+                <TransformWrapper
+                  wheel={{ step: 50 }}
+                  doubleClick={{ disabled: false }}
+                  pinch={{ step: 5 }}
+                  zoomAnimation={{ animationTime: 300 }}
+                  panning={{ velocityDisabled: true }}
                 >
-                  <Image
-                    alt={`modal-img-${index}`}
-                    src={src}
-                    width={200}
-                    height={200}
-                    className="w-full h-[120px] md:h-[150px] object-cover rounded-xl cursor-pointer"
-                    onClick={() => setSelectedImage(src)}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          ) : (
-            <div className="flex-1 flex justify-center items-center !cursor-zoom-in">
-              <TransformWrapper
-                wheel={{ step: 50 }}
-                doubleClick={{ disabled: false }}
-                pinch={{ step: 5 }}
-                zoomAnimation={{ animationTime: 300 }}
-                panning={{ velocityDisabled: true }}
-              >
-                <TransformComponent>
-                  <Image
-                    alt="Selected"
-                    src={selectedImage}
-                    width={800}
-                    height={800}
-                    className="w-full max-w-full max-h-[70vh] object-contain rounded-xl"
-                  />
-                </TransformComponent>
-              </TransformWrapper>
-            </div>
-          )}
+                  <TransformComponent>
+                    <Image
+                      alt="Selected"
+                      src={selectedImage}
+                      width={800}
+                      height={800}
+                      className="w-full max-w-full max-h-[70vh] object-contain rounded-xl"
+                    />
+                  </TransformComponent>
+                </TransformWrapper>
+              </div>
+            )}
+          </motion.div>
         </motion.div>
-      </motion.div>
+      )}
     </AnimatePresence>
   );
 };
