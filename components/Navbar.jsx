@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -7,7 +6,7 @@ import MenuOverlay from "./MenuOverlay";
 
 const navLinkItems = [
   {
-    href: "",
+    href: "/#about",
     title: "about",
   },
   {
@@ -25,10 +24,11 @@ function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-gray-500/50 backdrop-blur-[5px] shadow-sm border-b border-pink-300"
-      style={{
-        backdropFilter: "blur(5px)",
-      }}
+      className="
+    fixed top-0 left-0 right-0 z-50 
+    bg-gray-800 md:bg-gray-500/50 md:backdrop-blur-[5px] 
+    shadow-sm md:border-b border-pink-300
+  "
     >
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         {/* <Link href="/">
@@ -40,14 +40,14 @@ function Navbar() {
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="text-slate-200 flex items-center px-3 py-2 border border-slate-200 hover:text-white hover:border-white cursor-pointer"
+              className="text-slate-200 flex items-center px-3 py-2 hover:text-white hover:border-white cursor-pointer"
             >
               <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="text-slate-200 flex items-center px-3 py-2 border border-slate-200 hover:text-white hover:border-white"
+              className="text-slate-200 flex items-center px-3 py-2 hover:text-white hover:border-white"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
@@ -66,7 +66,12 @@ function Navbar() {
           </ul>
         </div>
       </div>
-      {navbarOpen ? <MenuOverlay items={navLinkItems} /> : null}
+
+      <MenuOverlay
+        items={navLinkItems}
+        isOpen={navbarOpen}
+        onItemClick={() => setNavbarOpen(false)}
+      />
     </nav>
   );
 }

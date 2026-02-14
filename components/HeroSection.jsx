@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { TypeAnimation } from "react-type-animation";
 import HireMeModal from "./HireMeModal";
 
 function HeroSection() {
@@ -50,7 +49,7 @@ function HeroSection() {
               repeat={Infinity}
             />
           </h1> */}
-          <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl !mb-6 !text-wrap">
+          <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl !my-6 !text-wrap">
             I'm a passionate and creative web developer with a strong foundation
             in modern front-end technologies. I specialize in building
             responsive, user-friendly websites with <strong>React</strong>,{" "}
@@ -65,15 +64,24 @@ function HeroSection() {
             >
               Hire Me
             </button>
-            <button className="cursor-pointer w-60 sm:w-fit px-1 py-1 rounded-full !mr-4 bg-gradient-to-br from-blue-500 via-purple-500  to-pink-500 hover:bg-slate-800 text-white !mt-3">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+            <button
+              onClick={() => {
+                const fileUrl = "/MyResume.pdf";
+                const link = document.createElement("a");
+                link.href = fileUrl;
+                link.download = "Tania_Shafiee_CV.pdf";
+                link.click();
+              }}
+              className="cursor-pointer w-60 sm:w-fit px-1 py-1 rounded-full !mr-4 bg-gradient-to-br from-blue-500 via-purple-500  to-pink-500 hover:bg-slate-800 text-white !mt-3"
+            >
+              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 cursor-pointer">
                 Download CV
               </span>
             </button>
           </div>
         </div>
         <div className="place-self-center !rounded-full">
-          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-6 border-pink-200 !mt-20">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-6 border-pink-200 mt-8 md:!mt-20">
             <Image
               src="/images/IMG_0637.jpg"
               alt="hero"

@@ -56,7 +56,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white !mt-8" id="about">
+    <section className="text-white !mt-20" id="about">
       <motion.h2
         className="w-full text-2xl md:text-4xl font-bold text-center text-pink-400"
         initial={{ opacity: 0, y: -30 }}
@@ -68,7 +68,7 @@ const AboutSection = () => {
       </motion.h2>
 
       <motion.div
-        className="flex flex-col md:flex-row gap-8 items-center py-8 px-4 xl:gap-16 sm:py-14 xl:px-16"
+        className="flex flex-col lg:flex-row items-center px-4 xl:gap-16 lg:py-14 xl:px-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -85,7 +85,7 @@ const AboutSection = () => {
         </motion.div>
 
         <motion.div
-          className="!mt-4 md:mt-0 text-left flex flex-col h-full"
+          className="text-left flex flex-col h-full"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}

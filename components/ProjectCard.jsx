@@ -70,28 +70,28 @@ const ProjectCard = ({
             {id == 3 ? (
               <div
                 onClick={() => setPictureModal2(true)}
-                className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
+                className="relative h-10 w-10 md:h-14 md:w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
               >
                 <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
-                  <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
+                  <EyeIcon className="h-6 w-6 md:h-8 md:w-8 text-white group-hover/link:text-white hover:text-pink-500" />
                 </div>
               </div>
             ) : id == 6 ? (
               <div
                 onClick={() => setPictureModal3(true)}
-                className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
+                className="relative h-10 w-10 md:h-14 md:w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
               >
                 <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
-                  <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
+                  <EyeIcon className="h-6 w-6 md:h-8 md:w-8 text-white group-hover/link:text-white hover:text-pink-500" />
                 </div>
               </div>
             ) : id == 1 ? (
               <div
                 onClick={() => setPictureModal(true)}
-                className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
+                className="relative h-10 w-10 md:h-14 md:w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer"
               >
                 <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
-                  <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
+                  <EyeIcon className="h-6 w-6 md:h-8 md:w-8 text-white group-hover/link:text-white hover:text-pink-500" />
                 </div>
               </div>
             ) : null}
@@ -99,18 +99,18 @@ const ProjectCard = ({
               <Link
                 target="_blank"
                 href={gitUrl ? gitUrl : ""}
-                className="h-14 w-14 !mr-2 border-3 rounded-full border-white hover:border-pink-500 group/link flex items-center justify-center"
+                className="h-10 w-10 md:h-14 md:w-14 !mr-2 border-3 rounded-full border-white hover:border-pink-500 group/link flex items-center justify-center"
               >
-                <CodeBracketIcon className="h-8 w-8 text-white hover:text-pink-500 group-hover/link:text-white" />
+                <CodeBracketIcon className="h-6 w-6 md:h-8 md:w-8 text-white hover:text-pink-500 group-hover/link:text-white" />
               </Link>
             )}
             {hasVideo && (
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="h-14 w-14 !mr-2 border-3 relative rounded-full border-white hover:border-pink-500 group/link"
+                className="h-10 w-10 md:h-14 md:w-14 !mr-2 border-3 relative rounded-full border-white hover:border-pink-500 group/link"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <PlayIcon className="h-8 w-8 text-white hover:text-pink-500 cursor-pointer group-hover/link:text-white" />
+                  <PlayIcon className="h-6 w-6 md:h-8 md:w-8 text-white hover:text-pink-500 cursor-pointer group-hover/link:text-white" />
                 </div>
               </button>
             )}
@@ -118,10 +118,10 @@ const ProjectCard = ({
               <Link
                 target="_blank"
                 href={previewUrl}
-                className="relative h-14 w-14 rounded-full border-3 border-white hover:border-pink-500 group/link"
+                className="relative h-10 w-10 md:h-14 md:w-14 rounded-full border-3 border-white hover:border-pink-500 group/link"
               >
                 <div className="absolute inset-0 flex items-center justify-center hover:text-pink-50">
-                  <EyeIcon className="h-8 w-8 text-white group-hover/link:text-white hover:text-pink-500" />
+                  <EyeIcon className="h-6 w-6 md:h-8 md:w-8 text-white group-hover/link:text-white hover:text-pink-500" />
                 </div>
               </Link>
             )}

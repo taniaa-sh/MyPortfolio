@@ -10,7 +10,7 @@ const Lottie = dynamic(() => import("lottie-react"), {
 const LottieComponent = () => {
   return (
     <Lottie
-      className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] aspect-square rounded-full"
+      className="w-[280px] md:w-[400px] lg:w-[500px] xl:w-[600px] aspect-square rounded-full"
       animationData={animationData}
       loop={true}
     />

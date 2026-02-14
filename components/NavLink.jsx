@@ -1,9 +1,21 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const NavLink = ({ href, title }) => {
+const NavLink = ({ href, title, onClick, className }) => {
+  const pathname = usePathname();
+
+  const isActive =
+    pathname + window.location.hash === href ||
+    (href === "/" && pathname === "/");
+
   return (
-    <Link href={title === "about" ? "/support" : href} className="cursor-pointer">
-      <span className="block py-2 pr-4 pl-3 text-white sm:text-xl rounded md:p-0 hover:text-white">
+    <Link href={href} onClick={onClick}>
+      <span
+        className={`block py-2 sm:text-xl ${
+          isActive ? "text-pink-300 md:text-white" : "text-white"
+        } hover:text-pink-300 cursor-pointer ${className || ""}`}
+      >
         {title}
       </span>
     </Link>

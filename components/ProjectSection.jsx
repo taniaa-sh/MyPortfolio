@@ -74,21 +74,21 @@ const projectsData = [
     gitUrl: "https://github.com/taniaa-sh/weather-conditionsr/tree/master",
     previewUrl: "https://weather-conditions.vercel.app/",
   },
+  // {
+  //   id: 8,
+  //   title: "Judiciary",
+  //   description:
+  //     "A web platform for judicial services, providing real-time case management and document tracking.",
+  //   image: "/images/Judiciary.png",
+  //   tag: ["all", "web"],
+  //   imgUrl: "/images/Judiciary.png",
+  //   previewUrl: "https://eadl.hooshmandsepehrco.com/",
+  // },
   {
-    id: 8,
-    title: "Judiciary",
-    description:
-      "A web platform for judicial services, providing real-time case management and document tracking.",
-    image: "/images/Judiciary.png",
-    tag: ["all", "web"],
-    imgUrl: "/images/Judiciary.png",
-    previewUrl: "https://eadl.hooshmandsepehrco.com/",
-  },
-    {
     id: 9,
     title: "library",
     description:
-    "An intuitive web platform for managing library resources, tracking books, and providing seamless.",
+      "An intuitive web platform for managing library resources, tracking books, and providing seamless.",
     image: "/images/library.png",
     tag: ["all", "web"],
     imgUrl: "/images/library.png",
@@ -115,7 +115,7 @@ const ProjectSection = () => {
         initial={{ opacity: 0, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="!mb-10 font-semibold text-2xl md:text-4xl text-center text-pink-400"
+        className="!mb-10 !mt-20 lg:!mt-0 font-semibold text-2xl md:text-4xl text-center text-pink-400"
         id="projects"
       >
         my projects
@@ -137,7 +137,7 @@ const ProjectSection = () => {
             isSelected={tag === "Mobile"}
             />
         </div> */}
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12">
         {projectsData.map((project) => (
           <motion.div
             key={project.id}
