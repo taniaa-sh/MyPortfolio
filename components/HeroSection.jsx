@@ -15,7 +15,7 @@ function HeroSection() {
       {isModalOpen && <HireMeModal setShowModal={handleCloseModal} />}
       <div className="flex flex-col md:flex-row gap-10 sm:gap-8">
         <div className="place-self-center text-center sm:text-left !mt-10">
-          <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl !my-6 !text-wrap">
+          <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl !my-6 !text-wrap text-justify">
             I'm a passionate and creative web developer with a strong foundation
             in modern front-end technologies. I specialize in building
             responsive, user-friendly websites with <strong>React</strong>,{" "}
