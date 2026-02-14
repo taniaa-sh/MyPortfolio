@@ -1,13 +1,18 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const NavLink = ({ href, title, onClick, className }) => {
   const pathname = usePathname();
+  const [hash, setHash] = useState("");
+
+  useEffect(() => {
+    setHash(window.location.hash);
+  }, []);
 
   const isActive =
-    pathname + window.location.hash === href ||
-    (href === "/" && pathname === "/");
+    pathname + hash === href || (href === "/" && pathname === "/");
 
   return (
     <Link href={href} onClick={onClick}>
