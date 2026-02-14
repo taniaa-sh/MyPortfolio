@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const ProjectTag = ({ name, onClick, isSelected }) => {
   const buttonStyles = isSelected
     ? "text-white border-purple-500"

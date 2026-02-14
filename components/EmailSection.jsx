@@ -14,52 +14,86 @@ const EmailSection = () => {
     const subject = event.target.subject.value;
     const message = event.target.message.value;
 
-    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      email,
+    )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
 
     window.open(mailtoLink, "_blank");
   }
 
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const itemRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <motion.div
       className="flex flex-col !mt-16"
-      whileInView={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
     >
-      <h4 className="flex justify-center items-center font-semibold text-2xl md:text-4xl !text-center text-pink-400">
-        contact me
-      </h4>
-
-      <motion.section
-        className="w-full grid xl:grid-cols-2 py-12 !gap-6 md:gap-12 relative"
-        id="contact"
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
+      <motion.h4
+        className="flex justify-center items-center font-semibold text-2xl md:text-4xl !text-center text-pink-400"
+        variants={fadeUp}
       >
-        <div>
-          <h5 className="text-xl font-bold text-white my-2">lets conect</h5>
+        contact me
+      </motion.h4>
+
+      <motion.section className="w-full grid xl:grid-cols-2 py-12 !gap-6 md:gap-12 relative">
+        <motion.div variants={itemLeft}>
+          <h5 className="text-xl font-bold text-white my-2">lets connect</h5>
           <p className="text-[#ADB7BE] !mb-4 max-w-md">
-            I'm currently looking for a new opportunities, my inbox is always
-            open. Ehether you have a question or just want to say hi, I'll try
+            I'm currently looking for new opportunities. My inbox is always
+            open. Whether you have a question or just want to say hi, I'll try
             my best to get back to you!
           </p>
           <div className="socials flex flex-row gap-2">
             <Link href={"https://github.com/taniaa-sh"} target="_blank">
-              <Image src={GithubIcon} alt="" />
+              <Image src={GithubIcon} alt="GitHub" />
             </Link>
             <Link
               href={"https://linkedin.com/in/tania-shafiee"}
               target="_blank"
             >
-              <Image src={LinkdinIcon} alt="" />
+              <Image src={LinkdinIcon} alt="LinkedIn" />
             </Link>
           </div>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div variants={itemRight}>
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-4 justify-center items-center self-center w-full"
@@ -107,7 +141,6 @@ const EmailSection = () => {
               </label>
               <textarea
                 maxLength={500}
-                resize="none"
                 id="message"
                 name="message"
                 required
@@ -125,7 +158,7 @@ const EmailSection = () => {
               </button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </motion.section>
     </motion.div>
   );
