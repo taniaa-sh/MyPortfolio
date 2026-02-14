@@ -33,6 +33,7 @@ const PictureModal = ({
           "/images/eghtesad2.png",
           "/images/eghtesad3.png",
           "/images/eghtesad4.png",
+          "/images/eghtesad5.png",
         ]
       : [
           "/images/cartable.png",
@@ -43,11 +44,8 @@ const PictureModal = ({
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
-      if (selectedImage) {
-        setSelectedImage(null);
-      } else {
-        setShowModal(false);
-      }
+      if (selectedImage) setSelectedImage(null);
+      else setShowModal(false);
     }
   };
 
@@ -61,63 +59,53 @@ const PictureModal = ({
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 bg-white/40 flex justify-center items-center z-10"
+        className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 p-4"
         onClick={handleBackdropClick}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="bg-gradient-to-br z-50 from-purple-600 via-purple-800 to-black text-white p-4 rounded-lg relative"
+          className="bg-gradient-to-br from-purple-600 via-purple-800 to-black text-white p-4 rounded-xl w-full max-w-[700px] max-h-[90vh] flex flex-col"
           initial={{ scale: 0.8, opacity: 0, y: 50 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.8, opacity: 0, y: 50 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          {!selectedImage ? (
-            <div className="flex flex-col gap-3 h-[380px] md:w-[700px] w-[230px]">
-              <button
-                className="text-pink-300 cursor-pointer self-start"
-                onClick={onClose}
-              >
-                <div className="rounded border border-white">
-                  <XMarkIcon className="h-8 w-8 text-white" />
-                </div>
+          <div className="flex justify-between items-center mb-2">
+            {selectedImage && (
+              <button onClick={() => setSelectedImage(null)}>
+                <ArrowLeftIcon className="h-8 w-8 text-white cursor-pointer" />
               </button>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-y-auto overflow-x-hidden custom-scrollbar">
-                {images.map((src, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Image
-                      alt={`modal-img-${index}`}
-                      src={src}
-                      width={200}
-                      height={400}
-                      className="!h-[150px] rounded-2xl cursor-pointer"
-                      onClick={() => setSelectedImage(src)}
-                    />
-                  </motion.div>
-                ))}
-              </div>
+            )}
+            <button onClick={onClose}>
+              <XMarkIcon className="h-8 w-8 text-white cursor-pointer" />
+            </button>
+          </div>
+
+          {!selectedImage ? (
+            <div className="px-6 md:px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 overflow-y-auto custom-scrollbar max-h-[70vh] overflow-x-hidden">
+              {images.map((src, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Image
+                    alt={`modal-img-${index}`}
+                    src={src}
+                    width={200}
+                    height={200}
+                    className="w-full h-[120px] md:h-[150px] object-cover rounded-xl cursor-pointer"
+                    onClick={() => setSelectedImage(src)}
+                  />
+                </motion.div>
+              ))}
             </div>
           ) : (
-            <motion.div
-              className="flex flex-col gap-2 items-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <button
-                className="text-pink-300 cursor-pointer self-start"
-                onClick={() => setSelectedImage(null)}
-              >
-                <ArrowLeftIcon className="h-8 w-8 text-white" />
-              </button>
+            <div className="flex-1 flex justify-center items-center">
               <TransformWrapper
-                wheel={{ step: 80 }}
+                wheel={{ step: 50 }}
                 doubleClick={{ disabled: false }}
                 pinch={{ step: 5 }}
                 zoomAnimation={{ animationTime: 300 }}
@@ -129,14 +117,13 @@ const PictureModal = ({
                     src={selectedImage}
                     width={800}
                     height={800}
-                    className="rounded-xl md:w-[600px] md:h-[350px] object-contain"
+                    className="w-full max-w-full max-h-[70vh] object-contain rounded-xl"
                   />
                 </TransformComponent>
               </TransformWrapper>
-            </motion.div>
+            </div>
           )}
         </motion.div>
-        <div className="absolute inset-0" onClick={onClose} />
       </motion.div>
     </AnimatePresence>
   );
