@@ -27,31 +27,19 @@ const EmailSection = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <motion.h4
-        whileInView={{ opacity: 1, x: -50 }}
-        initial={{ opacity: 0, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="font-semibold text-2xl md:text-4xl text-center text-pink-400"
-        id="projects"
-      >
+      <h4 className="flex justify-center items-center font-semibold text-2xl md:text-4xl !text-center text-pink-400">
         contact me
-      </motion.h4>
+      </h4>
 
       <motion.section
-        className="grid xl:grid-cols-2 py-12 !gap-6 md:gap-12 relative"
+        className="w-full grid xl:grid-cols-2 py-12 !gap-6 md:gap-12 relative"
         id="contact"
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <div>
           <h5 className="text-xl font-bold text-white my-2">lets conect</h5>
           <p className="text-[#ADB7BE] !mb-4 max-w-md">
             I'm currently looking for a new opportunities, my inbox is always
@@ -62,27 +50,21 @@ const EmailSection = () => {
             <Link href={"https://github.com/taniaa-sh"} target="_blank">
               <Image src={GithubIcon} alt="" />
             </Link>
-            <Link href={"https://linkedin.com/in/tania-shafiee"} target="_blank">
+            <Link
+              href={"https://linkedin.com/in/tania-shafiee"}
+              target="_blank"
+            >
               <Image src={LinkdinIcon} alt="" />
             </Link>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="ml-10 xl:ml-0"
-        >
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4 justify-center items-center self-center w-full">
-            <motion.div
-              whileInView={{ opacity: 1, x: -50 }}
-              initial={{ opacity: 0, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-              viewport={{ once: true }}
-              className="w-full"
-            >
+        <div>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-4 justify-center items-center self-center w-full"
+          >
+            <div className="w-full">
               <label
                 htmlFor="email"
                 className="text-white block !mb-1 text-sm font-medium"
@@ -97,15 +79,9 @@ const EmailSection = () => {
                 placeholder="name@gmail.com"
                 className="p-2.5 rounded-lg bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm block w-full"
               />
-            </motion.div>
+            </div>
 
-            <motion.div
-              whileInView={{ opacity: 1, x: -50 }}
-              initial={{ opacity: 0, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-              viewport={{ once: true }}
-              className="w-full"
-            >
+            <div className="w-full">
               <label
                 htmlFor="subject"
                 className="text-white block !mb-1 text-sm font-medium"
@@ -120,15 +96,9 @@ const EmailSection = () => {
                 placeholder="Just saying hi !"
                 className="p-2.5 rounded-lg bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm block w-full"
               />
-            </motion.div>
+            </div>
 
-            <motion.div
-              whileInView={{ opacity: 1, x: -50 }}
-              initial={{ opacity: 0, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-              viewport={{ once: true }}
-              className="!mb-6 w-full"
-            >
+            <div className="!mb-6 w-full">
               <label
                 htmlFor="message"
                 className="text-white block text-sm !mb-2 font-medium"
@@ -144,22 +114,18 @@ const EmailSection = () => {
                 placeholder="Let's talk about..."
                 className="p-2.5 -mt-1 resize-none h-40 rounded-lg bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm block w-full"
               />
-            </motion.div>
+            </div>
 
-           <div className="w-full mr-24">
-             <motion.button
-            //  whileInView={{ opacity: 1, x: -50 }}
-            //   initial={{ opacity: 0, x: 0 }}
-            //   transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            //   viewport={{ once: true }}
-              type="submit"
-              className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 !px-5 rounded-lg w-full cursor-pointer"
-            >
-              Send Message
-            </motion.button>
-           </div>
+            <div className="w-full">
+              <button
+                type="submit"
+                className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 !px-5 rounded-lg w-full cursor-pointer"
+              >
+                Send Message
+              </button>
+            </div>
           </form>
-        </motion.div>
+        </div>
       </motion.section>
     </motion.div>
   );

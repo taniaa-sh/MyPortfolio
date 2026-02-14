@@ -110,16 +110,9 @@ const ProjectSection = () => {
 
   return (
     <>
-      <motion.h4
-        whileInView={{ opacity: 1, x: -50 }}
-        initial={{ opacity: 0, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="!mb-10 !mt-20 lg:!mt-0 font-semibold text-2xl md:text-4xl text-center text-pink-400"
-        id="projects"
-      >
+      <h4 className="!mb-10 !mt-20 lg:!mt-0 font-semibold text-2xl md:text-4xl text-center text-pink-400">
         my projects
-      </motion.h4>
+      </h4>
       {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
             <ProjectTag
             onClick={handleTagChange}
