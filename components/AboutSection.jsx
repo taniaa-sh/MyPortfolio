@@ -58,7 +58,7 @@ const AboutSection = () => {
   return (
     <section className="text-white !mt-20" id="about">
       <motion.h2
-        className="w-full text-2xl md:text-4xl font-bold text-center text-pink-400"
+        className="w-full text-2xl md:text-4xl font-bold !text-center text-pink-400"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
