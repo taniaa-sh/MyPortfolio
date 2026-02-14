@@ -71,7 +71,7 @@ const HireMeModal = (props) => {
 
       {/* MOBILE */}
       <div
-        className="flex md:hidden fixed inset-0 w-full h-full bg-black/10 !backdrop-blur-sm z-50 items-center justify-center"
+        className={`flex md:hidden fixed inset-0 w-full h-full bg-black/10 !backdrop-blur-sm z-50 items-center justify-center ${isClosing ? "animate-slideDown" : "animate-slideUp"}`}
         onClick={handleBackdropClick}
       >
         <div

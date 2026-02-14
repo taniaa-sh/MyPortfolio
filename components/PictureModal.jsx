@@ -103,7 +103,7 @@ const PictureModal = ({
               ))}
             </div>
           ) : (
-            <div className="flex-1 flex justify-center items-center">
+            <div className="flex-1 flex justify-center items-center !cursor-zoom-in">
               <TransformWrapper
                 wheel={{ step: 50 }}
                 doubleClick={{ disabled: false }}

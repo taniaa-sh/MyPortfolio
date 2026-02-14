@@ -12,43 +12,9 @@ function HeroSection() {
 
   return (
     <section>
-      {isModalOpen && (
-        // <div
-        //   className="fixed inset-0 bg-purple-200/40 flex justify-center items-center z-10"
-        //   style={{
-        //     backdropFilter: "blur(5px)",
-        //   }}
-        //   onClick={handleCloseModal}
-        // >
-        //   <div className="bg-gradient-to-br z-50 from-purple-600 via-purple-800 to-black text-white p-6 rounded-lg max-w-sm w-full">
-        //     <h2 className="text-2xl !mb-4">Contact Information</h2>
-        //     <p>Email: taniashafiee78@gmail.com</p>
-        //     <p>Phone: 09332080083</p>
-        //     <p>LinkedIn: linkedin.com/in/tania-shafiee</p>
-        //     <button
-        //       className="cursor-pointer !mt-4 w-full sm:w-fit px-4 py-2 rounded-full bg-purple-500 hover:bg-purple-600 text-white"
-        //       onClick={handleCloseModal}
-        //     >
-        //       Close
-        //     </button>
-        //   </div>
-        // </div>
-        <HireMeModal setShowModal={handleCloseModal} />
-      )}
+      {isModalOpen && <HireMeModal setShowModal={handleCloseModal} />}
       <div className="flex flex-col md:flex-row gap-10 sm:gap-8">
         <div className="place-self-center text-center sm:text-left !mt-10">
-          {/* <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold !mb-7">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-              Hello, I'm{" "}
-            </span>
-            <br />
-            <TypeAnimation
-              sequence={["Tania", 1000, "web developer", 1000]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </h1> */}
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl !my-6 !text-wrap">
             I'm a passionate and creative web developer with a strong foundation
             in modern front-end technologies. I specialize in building
