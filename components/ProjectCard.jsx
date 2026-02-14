@@ -62,10 +62,8 @@ const ProjectCard = ({
             className="w-full h-full object-fill"
           />
           <div
-            className="items-center justify-center overlay absolute !top-0 !left-0 w-full h-full bg-[#181818]/40 bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500"
-            style={{
-              backdropFilter: "blur(2px)",
-            }}
+            className="items-center justify-center overlay absolute top-0 left-0 w-full h-full bg-[#181818]/40 flex md:hidden md:group-hover:flex transition-all duration-500"
+            style={{ backdropFilter: "blur(2px)" }}
           >
             {id == 3 ? (
               <div
