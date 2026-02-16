@@ -13,8 +13,8 @@ function HeroSection() {
   return (
     <section>
       {isModalOpen && <HireMeModal setShowModal={handleCloseModal} />}
-      <div className="flex flex-col md:flex-row gap-10 sm:gap-8">
-        <div className="place-self-center text-center sm:text-left !mt-10">
+      <div className="flex flex-col-reverse lg:flex-row sm:gap-8">
+        <div className="place-self-center text-center sm:text-left !mt-1 sm:mt-20">
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl !my-6 !text-wrap text-justify">
             I'm a passionate and creative web developer with a strong foundation
             in modern front-end technologies. I specialize in building
@@ -47,7 +47,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="place-self-center !rounded-full">
-          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-6 border-pink-200 mt-8 md:!mt-20">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-6 border-pink-200 mt-16 md:!mt-20">
             <Image
               src="/images/IMG_0637.jpg"
               alt="hero"
