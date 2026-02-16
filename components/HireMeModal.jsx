@@ -5,6 +5,11 @@ import { useEffect, useState } from "react";
 
 const HireMeModal = (props) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const handleClose = () => {
     setIsClosing(true);
@@ -30,19 +35,26 @@ const HireMeModal = (props) => {
   return (
     <>
       <div
-        className="hidden md:flex fixed inset-0 w-full h-full bg-black/10 !backdrop-blur-sm z-50 items-center justify-center"
+        className={`hidden md:flex fixed inset-0 w-full h-full bg-black/10 backdrop-blur-sm z-50 items-center justify-center transition-opacity duration-300
+                ${isVisible ? "opacity-100" : "opacity-0"} `}
         onClick={handleBackdropClick}
       >
-        <div className="bg-gradient-to-br z-50 from-purple-600 via-purple-800 to-black text-white p-6 rounded-lg w-[500px] flex flex-col gap-4">
-          <h2 className="text-2xl !mb-4">Contact Information</h2>
+        <div
+          className={`
+    bg-gradient-to-br from-purple-600 via-purple-800 to-black
+    text-white p-6 rounded-lg w-[500px] flex flex-col gap-4
+    transform transition-all duration-300 ease-out
+    ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}
+  `}
+        >
+          <h2 className="text-2xl !mb-4 select-none">Contact Information</h2>
 
-          <Link
-            href="mailto:taniashafiee78@gmail.com"
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=taniashafiee78@gmail.com"
             target="_blank"
-            rel="noopener noreferrer"
           >
             Email: taniashafiee78@gmail.com
-          </Link>
+          </a>
 
           <Link
             target="_blank"
@@ -83,13 +95,12 @@ const HireMeModal = (props) => {
         >
           <h2 className="text-2xl !mb-4">Contact Information</h2>
 
-          <Link
-            href="mailto:taniashafiee78@gmail.com"
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=taniashafiee78@gmail.com"
             target="_blank"
-            rel="noopener noreferrer"
           >
             Email: taniashafiee78@gmail.com
-          </Link>
+          </a>
 
           <Link
             target="_blank"

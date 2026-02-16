@@ -42,7 +42,7 @@ function Navbar() {
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="text-slate-200 flex items-center px-3 py-2 hover:text-white hover:border-white"
+              className="text-slate-200 flex items-center px-3 py-2 hover:text-white hover:border-white cursor-pointer"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>

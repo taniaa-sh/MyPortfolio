@@ -101,3 +101,13 @@ body {
 .animate-slideDown {
   animation: slideDown 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #18191e inset !important;
+  transition: background-color 9999s ease-in-out 0s;
+}

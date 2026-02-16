@@ -4,8 +4,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-gradient-to-tr from-purple-900 via-black to-purple-800 text-white py-8">
       <div className="container mx-auto px-4 flex flex-col items-center justify-between">
-        <div className="text-center">
-        </div>
+        <div className="text-center"></div>
         <div className="flex gap-4">
           <Link
             href="https://github.com/taniaa-sh"
@@ -21,13 +20,12 @@ const Footer = () => {
           >
             LinkedIn
           </Link>
-          <Link
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=taniashafiee78@gmail.com"
             target="_blank"
-            href="mailto:taniashafiee78@gmail.com"
-            className="hover:text-purple-400 transition"
           >
             Email
-          </Link>
+          </a>
         </div>
       </div>
     </footer>
