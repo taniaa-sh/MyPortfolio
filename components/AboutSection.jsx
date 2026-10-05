@@ -16,12 +16,11 @@ const Tab_Data = [
         <li>JavaScript (ES6+)</li>
         <li>TypeScript</li>
         <li>Tailwind CSS</li>
-        {/* <li>HTML5 & CSS3</li> */}
         <li>Responsive Design & Mobile-First Development</li>
         <li>Version Control with Git & GitHub</li>
-        {/* <li>API Integration (RESTful APIs, GraphQL)</li> */}
+        <li>API Integration (RESTful APIs)</li>
         <li>State Management (Redux, Context API)</li>
-        {/* <li>UI/UX Design Principles</li> */}
+        <li>Design Systems</li>
       </ul>
     ),
   },

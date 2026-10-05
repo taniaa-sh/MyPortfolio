@@ -14,7 +14,8 @@ const navLinkItems = [
     title: "projects",
   },
   {
-    href: "/#contact",
+    href: {
+      pathname: "/support",},
     title: "contact",
   },
 ];

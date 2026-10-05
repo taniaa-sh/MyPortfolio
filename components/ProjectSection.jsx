@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "Cartable",
+    title: "Cartable set",
     description:
       "A digital cartable system for Hoshmand Sepehr, managing documents efficiently.",
     image: "/images/cartable.png",
@@ -25,7 +25,7 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "Set Panel",
+    title: "Admin panel",
     description:
       "Admin panel for internal management at Hoshmand Sepehr with user-friendly interface.",
     image: "/images/panel.png",
@@ -34,24 +34,24 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Set WebSite",
+    title: "Set",
     description:
       "A responsive web platform featuring multimedia content and integrated video support.",
     image: "/images/set.png",
     tag: ["all", "web"],
     gitUrl: "",
-    hasVideo: true,
+    // hasVideo: true,
     previewUrl: "https://set.bsi.ir/",
-    videoSrc: "https://arashaltafi.ir/url_sample/mp4.mp4",
+    // videoSrc: "https://arashaltafi.ir/url_sample/mp4.mp4",
   },
   {
     id: 5,
-    title: "Movie Site",
+    title: "Movie",
     description:
       "An online movie platform with browsing, streaming, and user-friendly navigation features.",
     image: "/images/movie.png",
     tag: ["all", "web"],
-    gitUrl: "https://github.com/taniaa-sh/HyperMovie/tree/master",
+    gitUrl: "https://github.com/taniaa-sh/HyperMovie",
   },
   {
     id: 6,
@@ -71,7 +71,7 @@ const projectsData = [
     image: "/images/weather.png",
     tag: ["all", "web"],
     imgUrl: "/images/weather.png",
-    gitUrl: "https://github.com/taniaa-sh/weather-conditionsr/tree/master",
+    gitUrl: "https://github.com/taniaa-sh/weather-conditions",
     previewUrl: "https://weather-conditions.vercel.app/",
   },
   // {
@@ -109,7 +109,7 @@ const ProjectSection = () => {
   });
 
   return (
-    <>
+    <div id="projects">
       <h4 className="!mb-10 !mt-20 lg:!mt-0 font-semibold text-2xl md:text-4xl !text-center text-pink-400">
         my projects
       </h4>
@@ -153,7 +153,7 @@ const ProjectSection = () => {
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

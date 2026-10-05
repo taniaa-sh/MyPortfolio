@@ -32,7 +32,7 @@ function HeroSection() {
             </button>
             <button
               onClick={() => {
-                const fileUrl = "/MyResume.pdf";
+                const fileUrl = "/taniaShafiee.pdf";
                 const link = document.createElement("a");
                 link.href = fileUrl;
                 link.download = "Tania_Shafiee_CV.pdf";
