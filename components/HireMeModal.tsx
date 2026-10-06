@@ -3,7 +3,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const HireMeModal = (props) => {
+type PropsType = {
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const HireMeModal = (props: PropsType) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -19,7 +23,7 @@ const HireMeModal = (props) => {
     }, 250);
   };
 
-  const handleBackdropClick = (e) => {
+  const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       handleClose();
     }

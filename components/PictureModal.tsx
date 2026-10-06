@@ -4,48 +4,64 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import {
+  TransformWrapper,
+  TransformComponent,
+} from "react-zoom-pan-pinch";
+
+interface PictureModalProps {
+  setShowModal?: (show: boolean) => void;
+  isPanel?: boolean;
+  onClose: () => void;
+  isPanelEghtesad?: boolean;
+  isOpen: boolean;
+}
 
 const PictureModal = ({
   setShowModal,
-  isPanel,
+  isPanel = false,
   onClose,
-  isPanelEghtesad,
+  isPanelEghtesad = false,
   isOpen,
-}) => {
-  if (!isOpen) return null;
-  const [selectedImage, setSelectedImage] = useState(null);
+}: PictureModalProps) => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const images = isPanel
+  const images: string[] = isPanel
     ? [
-        "/images/setPanel1.png",
-        "/images/setPanel2.png",
-        "/images/setPanel3.png",
-        "/images/setPanel4.png",
-        "/images/setPanel5.png",
-        "/images/setPanel6.png",
-        "/images/setPanel7.png",
-      ]
+      "/images/setPanel1.png",
+      "/images/setPanel2.png",
+      "/images/setPanel3.png",
+      "/images/setPanel4.png",
+      "/images/setPanel5.png",
+      "/images/setPanel6.png",
+      "/images/setPanel7.png",
+    ]
     : isPanelEghtesad
       ? [
-          "/images/eghtesad.png",
-          "/images/eghtesad1.png",
-          "/images/eghtesad2.png",
-          "/images/eghtesad3.png",
-          "/images/eghtesad4.png",
-          "/images/eghtesad5.png",
-        ]
+        "/images/eghtesad.png",
+        "/images/eghtesad1.png",
+        "/images/eghtesad2.png",
+        "/images/eghtesad3.png",
+        "/images/eghtesad4.png",
+        "/images/eghtesad5.png",
+      ]
       : [
-          "/images/cartable.png",
-          "/images/cartable1.png",
-          "/images/cartable2.png",
-          "/images/cartable3.png",
-        ];
+        "/images/cartable.png",
+        "/images/cartable1.png",
+        "/images/cartable2.png",
+        "/images/cartable3.png",
+      ];
 
-  const handleBackdropClick = (e) => {
+  const handleBackdropClick = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
     if (e.target === e.currentTarget) {
-      if (selectedImage) setSelectedImage(null);
-      else setShowModal(false);
+      if (selectedImage) {
+        setSelectedImage(null);
+      } else {
+        setShowModal?.(false);
+        onClose();
+      }
     }
   };
 
@@ -60,6 +76,8 @@ const PictureModal = ({
       document.body.style.overflowY = "auto";
     };
   }, [isOpen]);
+
+  if (!isOpen) return null;
 
   return (
     <AnimatePresence>
@@ -80,11 +98,15 @@ const PictureModal = ({
           >
             <div className="flex justify-between items-center mb-2">
               {selectedImage && (
-                <button onClick={() => setSelectedImage(null)}>
+                <button
+                  type="button"
+                  onClick={() => setSelectedImage(null)}
+                >
                   <ArrowLeftIcon className="h-8 w-8 text-white cursor-pointer" />
                 </button>
               )}
-              <button onClick={onClose}>
+
+              <button type="button" onClick={onClose}>
                 <XMarkIcon className="h-8 w-8 text-white cursor-pointer" />
               </button>
             </div>
@@ -93,7 +115,7 @@ const PictureModal = ({
               <div className="px-6 md:px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 overflow-y-auto custom-scrollbar max-h-[70vh] overflow-x-hidden">
                 {images.map((src, index) => (
                   <motion.div
-                    key={index}
+                    key={src}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

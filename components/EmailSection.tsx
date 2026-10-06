@@ -1,25 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import GithubIcon from "../public/github-icon.svg";
-import LinkdinIcon from "../public/linkedin-icon.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const EmailSection = () => {
-  function handleSubmit(event) {
-    event.preventDefault();
+  const handleSubmit: React.ComponentProps<"form">["onSubmit"] = (event) => {
+    event?.preventDefault();
 
-    const email = event.target.email.value;
-    const subject = event.target.subject.value;
-    const message = event.target.message.value;
+    if (!event) return;
+
+    const formData = new FormData(event.currentTarget);
+
+    const email = String(formData.get("email") ?? "");
+    const subject = String(formData.get("subject") ?? "");
+    const message = String(formData.get("message") ?? "");
 
     const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
       email,
     )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
 
     window.open(mailtoLink, "_blank");
-  }
+  };
 
   const container = {
     hidden: {},
@@ -76,19 +78,30 @@ const EmailSection = () => {
         <motion.div variants={itemLeft}>
           <h5 className="text-xl font-bold text-white my-2">lets connect</h5>
           <p className="text-[#ADB7BE] !mb-4 max-w-md">
-            I'm currently looking for new opportunities. My inbox is always
+            {`      I'm currently looking for new opportunities. My inbox is always
             open. Whether you have a question or just want to say hi, I'll try
-            my best to get back to you!
+            my best to get back to you!`}
           </p>
           <div className="socials flex flex-row gap-2">
-            <Link href={"https://github.com/taniaa-sh"} target="_blank">
-              <Image src={GithubIcon} alt="GitHub" />
+            <Link href="https://github.com/taniaa-sh" target="_blank">
+              <Image
+                src="/github-icon.svg"
+                width={32}
+                height={32}
+                alt="GitHub"
+              />
             </Link>
+
             <Link
-              href={"https://linkedin.com/in/tania-shafiee"}
+              href="https://linkedin.com/in/tania-shafiee"
               target="_blank"
             >
-              <Image src={LinkdinIcon} alt="LinkedIn" />
+              <Image
+                src="/linkedin-icon.svg"
+                width={32}
+                height={32}
+                alt="LinkedIn"
+              />
             </Link>
           </div>
         </motion.div>

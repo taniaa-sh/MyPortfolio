@@ -1,11 +1,20 @@
 "use client";
-import Navbar from "@/components/Navbar";
-import Support from "@/components/Support";
-import TabButton from "@/components/TabButton";
-import React, { useState, useTransition } from "react";
+
+import React, { ReactNode, useState, useTransition } from "react";
+import Navbar from "../../components/Navbar";
+import Support from "../../components/Support";
+import TabButton from "../../components/TabButton";
+
+type TabId = "skills" | "education" | "Experience";
+
+interface TabItem {
+  title: string;
+  id: TabId;
+  content: ReactNode;
+}
 
 export default function Page() {
-  const Tab_Data = [
+  const Tab_Data: TabItem[] = [
     {
       title: "skills",
       id: "skills",
@@ -15,22 +24,27 @@ export default function Page() {
             <strong>React / Next.js:</strong> Building fast and modern web apps
             with routing, SSR, and component-based architecture.
           </li>
+
           <li>
             <strong>JavaScript / TypeScript:</strong> Writing clean, typed, and
             maintainable logic using modern ES6+ features.
           </li>
+
           <li>
             <strong>Tailwind CSS:</strong> Designing responsive and beautiful UI
             with utility-first approach.
           </li>
+
           <li>
             <strong>Responsive Design:</strong> Mobile-first design and layout
             optimizations across screen sizes.
           </li>
+
           <li>
             <strong>Git & GitHub:</strong> Version control, branching
             strategies, and collaborative development.
           </li>
+
           <li>
             <strong>State Management:</strong> Using Redux and React Context API
             for efficient app-wide state handling.
@@ -58,18 +72,21 @@ export default function Page() {
     },
   ];
 
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState<TabId>("skills");
   const [pending, startTransition] = useTransition();
 
-  const handleTabChange = (id) => {
+  const handleTabChange = (id: TabId): void => {
     startTransition(() => {
       setTab(id);
     });
   };
 
+  const selectedTab = Tab_Data.find((item) => item.id === tab);
+
   return (
     <>
       <Navbar />
+
       <div className="min-h-screen bg-[#121212] text-white px-4 md:px-8 xl:px-16 py-10 mt-20">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
           <div className="w-full lg:w-2/3 space-y-8">
@@ -77,6 +94,7 @@ export default function Page() {
               <h1 className="text-3xl sm:text-4xl font-bold text-purple-400 mb-4">
                 About Me
               </h1>
+
               <p className="text-base sm:text-lg text-justify leading-relaxed text-gray-300">
                 Frontend Developer with experience building and maintaining web
                 applications using React.js, Next.js, and TypeScript. Skilled in
@@ -101,7 +119,7 @@ export default function Page() {
               </div>
 
               <div key={tab} className="transition-all duration-300">
-                {Tab_Data.find((t) => t.id === tab).content}
+                {selectedTab?.content}
               </div>
             </div>
           </div>
@@ -111,6 +129,7 @@ export default function Page() {
               <h2 className="text-xl font-semibold text-purple-300 mb-4">
                 Need Help?
               </h2>
+
               <Support />
             </div>
           </div>

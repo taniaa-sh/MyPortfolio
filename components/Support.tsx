@@ -1,15 +1,34 @@
 "use client";
+
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
+interface Message {
+  id: string;
+  persianDate: string;
+  type: "AI" | "USER";
+  content: string;
+}
+
+interface ChatResponse {
+  choices?: {
+    message?: {
+      content?: string;
+    };
+  }[];
+  message?: string;
+}
+
 const Support = () => {
-  const containerRef = useRef(null);
-  const [isTyping, setIsTyping] = useState(false);
-  const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const [isTyping, setIsTyping] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("");
+  const [messages, setMessages] = useState<Message[]>([]);
 
   useEffect(() => {
     const now = new Date();
+
     setMessages([
       {
         id: crypto.randomUUID(),
@@ -23,7 +42,7 @@ const Support = () => {
     ]);
   }, []);
 
-  const scrollToBottom = () => {
+  const scrollToBottom = (): void => {
     if (containerRef.current) {
       containerRef.current.scrollTo({
         top: containerRef.current.scrollHeight,
@@ -32,17 +51,19 @@ const Support = () => {
     }
   };
 
-  const sendMessage = async () => {
+  const sendMessage = async (): Promise<void> => {
     const trimmed = message.trim();
+
     if (!trimmed || trimmed.length > 100) return;
 
     const now = new Date();
+
     const formattedTime =
       now.toTimeString().split(" ")[0].slice(0, 5) +
       " - " +
       now.toLocaleDateString("fa-IR");
 
-    const userMessage = {
+    const userMessage: Message = {
       id: crypto.randomUUID(),
       persianDate: formattedTime,
       type: "USER",
@@ -56,8 +77,10 @@ const Support = () => {
 
     try {
       const reply = await sendGPTMessage(trimmed);
+
       const replyDate = new Date();
-      const botMessage = {
+
+      const botMessage: Message = {
         id: crypto.randomUUID(),
         persianDate:
           replyDate.toTimeString().split(" ")[0].slice(0, 5) +
@@ -66,30 +89,45 @@ const Support = () => {
         type: "AI",
         content: reply,
       };
+
       setMessages((prev) => [...prev, botMessage]);
+
       setTimeout(scrollToBottom, 200);
     } finally {
       setIsTyping(false);
     }
   };
 
-  async function sendGPTMessage(message) {
+  const sendGPTMessage = async (message: string): Promise<string> => {
     const res = await fetch("/api/chat", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ message }),
     });
 
-    const data = await res.json();
-    return data?.choices?.[0]?.message?.content || data?.message || "No response received.";
-  }
+    const data: ChatResponse = await res.json();
+
+    return (
+      data?.choices?.[0]?.message?.content ||
+      data?.message ||
+      "No response received."
+    );
+  };
 
   return (
     <div className="w-full flex items-center justify-center text-white">
       <div className="flex flex-col w-[600px] rounded-lg border border-purple-700 overflow-hidden">
         <div className="w-full bg-purple-700 py-4 px-6 flex justify-between items-center">
           <div className="flex gap-2 items-center">
-            <Image src="/images/chatBot.png" width={24} height={24} alt="icon" />
+            <Image
+              src="/images/chatBot.png"
+              width={24}
+              height={24}
+              alt="icon"
+            />
+
             <p className="text-white text-lg font-bold">Support</p>
           </div>
         </div>
@@ -99,9 +137,9 @@ const Support = () => {
             ref={containerRef}
             className="w-full h-[400px] flex flex-col gap-2 overflow-y-auto px-3"
           >
-            {messages.map((item, index) => (
+            {messages.map((item) => (
               <div
-                key={index}
+                key={item.id}
                 className={`w-full flex flex-col ${
                   item.type === "USER" ? "items-start" : "items-end"
                 } gap-1`}
@@ -121,9 +159,16 @@ const Support = () => {
                 >
                   {item.content}
                 </p>
+
                 <div className="flex gap-1 text-xs text-gray-400">
                   <p>{item.persianDate}</p>
-                  <Image src="/images/Unread.svg" width={16} height={16} alt="seen" />
+
+                  <Image
+                    src="/images/Unread.svg"
+                    width={16}
+                    height={16}
+                    alt="seen"
+                  />
                 </div>
               </div>
             ))}
@@ -135,20 +180,28 @@ const Support = () => {
               width={16}
               height={16}
               alt="send"
-              className={`cursor-pointer ${message ? "opacity-100" : "opacity-40"}`}
+              className={`cursor-pointer ${
+                message ? "opacity-100" : "opacity-40"
+              }`}
               onClick={() => message && sendMessage()}
             />
+
             <input
               type="text"
               placeholder="Write your message..."
               className="w-full text-sm bg-transparent text-white placeholder-gray-400 focus:outline-none"
               value={message}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") sendMessage();
+              onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                if (e.key === "Enter") {
+                  sendMessage();
+                }
               }}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 const value = e.target.value;
-                if (value.length <= 100) setMessage(value);
+
+                if (value.length <= 100) {
+                  setMessage(value);
+                }
               }}
             />
           </div>

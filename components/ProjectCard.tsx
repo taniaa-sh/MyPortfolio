@@ -1,4 +1,5 @@
 "use client";
+
 import {
   CodeBracketIcon,
   EyeIcon,
@@ -8,6 +9,19 @@ import Link from "next/link";
 import { useState } from "react";
 import VideoModal from "./VideoModal";
 import PictureModal from "./PictureModal";
+import Image from "next/image";
+
+interface ProjectCardProps {
+  imgUrl: string;
+  title: string;
+  description: string;
+  gitUrl?: string;
+  previewUrl?: string;
+  hasVideo?: boolean;
+  videoSrc?: string;
+  previewModal?: boolean;
+  id: number;
+}
 
 const ProjectCard = ({
   imgUrl,
@@ -15,15 +29,15 @@ const ProjectCard = ({
   description,
   gitUrl,
   previewUrl,
-  hasVideo,
+  hasVideo = false,
   videoSrc,
   previewModal,
   id,
-}) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [pictureModal, setPictureModal] = useState(false);
-  const [pictureModal2, setPictureModal2] = useState(false);
-  const [pictureModal3, setPictureModal3] = useState(false);
+}: ProjectCardProps) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [pictureModal, setPictureModal] = useState<boolean>(false);
+  const [pictureModal2, setPictureModal2] = useState<boolean>(false);
+  const [pictureModal3, setPictureModal3] = useState<boolean>(false);
 
   const iconButtonClass =
     "relative flex items-center justify-center h-10 w-10 md:h-14 md:w-14 rounded-full border-3 border-white hover:border-pink-500 group/link cursor-pointer transition-colors duration-300";
@@ -40,12 +54,14 @@ const ProjectCard = ({
           videoSrc={videoSrc}
         />
       )}
+
       {pictureModal && (
         <PictureModal
           onClose={() => setPictureModal(false)}
           isOpen={pictureModal}
         />
       )}
+
       {pictureModal2 && (
         <PictureModal
           onClose={() => setPictureModal2(false)}
@@ -53,6 +69,7 @@ const ProjectCard = ({
           isPanel
         />
       )}
+
       {pictureModal3 && (
         <PictureModal
           onClose={() => setPictureModal3(false)}
@@ -60,18 +77,22 @@ const ProjectCard = ({
           isPanelEghtesad
         />
       )}
+
       <div className="w-full overflow-hidden">
         <div className="relative h-60 md:h-80 group rounded-t-2xl !overflow-hidden">
-          <img
+          <Image
             src={imgUrl}
             alt="project"
-            className="w-full h-full object-fill"
+            className="!w-full !h-full object-fill"
+            width={10}
+            height={10}
           />
+
           <div
             className="items-center justify-center overlay absolute top-0 left-0 w-full h-full bg-[#181818]/40 flex md:hidden md:group-hover:flex transition-all duration-500"
             style={{ backdropFilter: "blur(2px)" }}
           >
-            {id == 3 && (
+            {id === 3 && (
               <button
                 type="button"
                 onClick={() => setPictureModal2(true)}
@@ -82,7 +103,7 @@ const ProjectCard = ({
               </button>
             )}
 
-            {id == 6 && (
+            {id === 6 && (
               <button
                 type="button"
                 onClick={() => setPictureModal3(true)}
@@ -92,7 +113,7 @@ const ProjectCard = ({
               </button>
             )}
 
-            {id == 1 && (
+            {id === 1 && (
               <button
                 type="button"
                 onClick={() => setPictureModal(true)}
@@ -101,6 +122,7 @@ const ProjectCard = ({
                 <EyeIcon className={iconClass} />
               </button>
             )}
+
             {gitUrl && (
               <Link
                 target="_blank"
@@ -111,6 +133,7 @@ const ProjectCard = ({
                 <CodeBracketIcon className={iconClass} />
               </Link>
             )}
+
             {hasVideo && (
               <button
                 type="button"
@@ -120,6 +143,7 @@ const ProjectCard = ({
                 <PlayIcon className={iconClass} />
               </button>
             )}
+
             {previewUrl && (
               <Link
                 target="_blank"
@@ -132,10 +156,12 @@ const ProjectCard = ({
             )}
           </div>
         </div>
+
         <div className="text-white rounded-b-xl bg-[#181818] py-6 px-4">
           <h5 className="font-xl font-semibold !mb-2 text-pink-400">
             {title}
           </h5>
+
           <p className="text-[#ADB7BE]">{description}</p>
         </div>
       </div>

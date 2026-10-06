@@ -48,7 +48,7 @@ const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [pending, startTransition] = useTransition();
 
-  const handleTabChange = (id) => {
+  const handleTabChange = (id: string) => {
     startTransition(() => {
       setTab(id);
     });
@@ -133,7 +133,7 @@ const AboutSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            {Tab_Data.find((t) => t.id === tab).content}
+            {Tab_Data.find((t) => t.id === tab)?.content}
           </motion.div>
         </motion.div>
       </motion.div>

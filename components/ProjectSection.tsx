@@ -1,9 +1,23 @@
 "use client";
-import { useState } from "react";
+
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
 
-const projectsData = [
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tag: string[];
+  imgUrl?: string;
+  gitUrl?: string;
+  previewUrl?: string;
+  hasVideo?: boolean;
+  videoSrc?: string;
+  previewModal?: boolean;
+}
+
+const projectsData: Project[] = [
   {
     id: 1,
     title: "Cartable set",
@@ -40,9 +54,7 @@ const projectsData = [
     image: "/images/set.png",
     tag: ["all", "web"],
     gitUrl: "",
-    // hasVideo: true,
     previewUrl: "https://set.bsi.ir/",
-    // videoSrc: "https://arashaltafi.ir/url_sample/mp4.mp4",
   },
   {
     id: 5,
@@ -74,16 +86,6 @@ const projectsData = [
     gitUrl: "https://github.com/taniaa-sh/weather-conditions",
     previewUrl: "https://weather-conditions.vercel.app/",
   },
-  // {
-  //   id: 8,
-  //   title: "Judiciary",
-  //   description:
-  //     "A web platform for judicial services, providing real-time case management and document tracking.",
-  //   image: "/images/Judiciary.png",
-  //   tag: ["all", "web"],
-  //   imgUrl: "/images/Judiciary.png",
-  //   previewUrl: "https://eadl.hooshmandsepehrco.com/",
-  // },
   {
     id: 9,
     title: "library",
@@ -98,38 +100,12 @@ const projectsData = [
 ];
 
 const ProjectSection = () => {
-  const [tag, setTag] = useState("All");
-
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
-  };
-
-  const filteredProject = projectsData.filter((project) => {
-    project.tag.includes(tag);
-  });
-
   return (
     <div id="projects">
       <h4 className="!mb-10 !mt-20 lg:!mt-0 font-semibold text-2xl md:text-4xl !text-center text-pink-400">
         My Projects
       </h4>
-      {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-            <ProjectTag
-            onClick={handleTagChange}
-            name="All"
-            isSelected={tag === "All"}
-            />
-            <ProjectTag
-            onClick={handleTagChange}
-            name="Web"
-            isSelected={tag === "Web"}
-            />
-            <ProjectTag
-            onClick={handleTagChange}
-            name="Mobile"
-            isSelected={tag === "Mobile"}
-            />
-        </div> */}
+
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12">
         {projectsData.map((project) => (
           <motion.div

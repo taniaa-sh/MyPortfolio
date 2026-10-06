@@ -16,12 +16,12 @@ function HeroSection() {
       <div className="flex flex-col-reverse lg:flex-row sm:gap-8">
         <div className="place-self-center text-center sm:text-left !mt-1 sm:mt-20">
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl !my-6 !text-wrap text-justify">
-            I'm a passionate and creative web developer with a strong foundation
+            {`  I'm a passionate and creative web developer with a strong foundation
             in modern front-end technologies. I specialize in building
             responsive, user-friendly websites with <strong>React</strong>,{" "}
             <strong>Next.js</strong>, and <strong>Tailwind CSS</strong>. I love
             bringing ideas to life through code and am always eager to learn new
-            skills to improve my craft.
+            skills to improve my craft.`}
           </p>
           <div className="!mt-6">
             <button

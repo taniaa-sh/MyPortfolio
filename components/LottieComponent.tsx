@@ -1,6 +1,5 @@
-import React from "react";
 import dynamic from "next/dynamic";
-import animationData from "@/app/animation/Animation - 1747122962556 (8).json";
+import animationData from "../app/animation/Animation.json"
 
 const Lottie = dynamic(() => import("lottie-react"), {
   ssr: false, // ← don’t render on server

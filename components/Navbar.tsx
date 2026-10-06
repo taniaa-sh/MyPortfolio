@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+
+import { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
@@ -15,21 +16,22 @@ const navLinkItems = [
   },
   {
     href: {
-      pathname: "/support",},
+      pathname: "/support",
+    },
     title: "contact",
   },
 ];
 
 function Navbar() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
 
   return (
     <nav
       className="
-    fixed top-0 left-0 right-0 z-50 
-    bg-gray-800 md:bg-gray-500/50 md:backdrop-blur-[5px] 
-    shadow-sm md:border-b border-pink-300
-  "
+        fixed top-0 left-0 right-0 z-50 
+        bg-gray-800 md:bg-gray-500/50 md:backdrop-blur-[5px] 
+        shadow-sm md:border-b border-pink-300
+      "
     >
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <div className="block md:hidden mobile-menu">
@@ -49,13 +51,14 @@ function Navbar() {
             </button>
           )}
         </div>
+
         <div
           className="menu hidden md:block md:w-auto mx-auto pr-60"
           id="navbar"
         >
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 !mt-0">
-            {navLinkItems.map((item, index) => (
-              <li className="inline-block" key={index}>
+            {navLinkItems.map((item) => (
+              <li className="inline-block" key={item.title}>
                 <NavLink href={item.href} title={item.title} />
               </li>
             ))}

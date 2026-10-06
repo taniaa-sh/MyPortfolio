@@ -1,7 +1,23 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { UrlObject } from "url";
 import NavLink from "./NavLink";
 
-const MenuOverlay = ({ items, isOpen, onItemClick }) => {
+interface NavItem {
+  href: string | UrlObject;
+  title: string;
+}
+
+interface MenuOverlayProps {
+  items: NavItem[];
+  isOpen: boolean;
+  onItemClick: () => void;
+}
+
+const MenuOverlay = ({
+  items,
+  isOpen,
+  onItemClick,
+}: MenuOverlayProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -13,9 +29,9 @@ const MenuOverlay = ({ items, isOpen, onItemClick }) => {
           transition={{ duration: 0.3 }}
           className="flex flex-col items-center md:hidden z-50 bg-gray-800 border-t border-pink-300"
         >
-          {items.map((item, index) => (
+          {items.map((item) => (
             <li
-              key={index}
+              key={item.title}
               className="w-full text-center hover:bg-gray-700 py-1 hover:!text-pink-300"
             >
               <NavLink
