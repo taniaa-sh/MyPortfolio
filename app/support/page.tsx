@@ -95,7 +95,7 @@ export default function Page() {
                 About Me
               </h1>
 
-              <p className="text-base sm:text-lg text-justify leading-relaxed text-gray-300">
+              <p className="text-base sm:text-lg text-start leading-relaxed text-gray-300">
                 Frontend Developer with experience building and maintaining web
                 applications using React.js, Next.js, and TypeScript. Skilled in
                 developing reusable components, scalable frontend structures,

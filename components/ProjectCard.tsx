@@ -96,7 +96,6 @@ const ProjectCard = ({
               <button
                 type="button"
                 onClick={() => setPictureModal2(true)}
-                aria-label="مشاهده تصاویر پروژه"
                 className={iconButtonClass}
               >
                 <EyeIcon className={iconClass} />

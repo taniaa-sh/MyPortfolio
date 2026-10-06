@@ -90,7 +90,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-base lg:text-lg text-justify">
+          <p className="text-base lg:text-lg text-start">
             Frontend Developer with experience building and maintaining web
             applications using React.js, Next.js, and TypeScript. Skilled in
             developing reusable components, scalable frontend structures, Design
