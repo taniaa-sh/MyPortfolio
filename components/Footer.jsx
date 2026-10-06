@@ -13,6 +13,7 @@ const Footer = () => {
           >
             GitHub
           </Link>
+
           <Link
             href="https://linkedin.com/in/tania-shafiee"
             target="_blank"
@@ -20,9 +21,12 @@ const Footer = () => {
           >
             LinkedIn
           </Link>
+
           <a
             href="https://mail.google.com/mail/?view=cm&to=taniashafiee78@gmail.com"
             target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-400 transition"
           >
             Email
           </a>

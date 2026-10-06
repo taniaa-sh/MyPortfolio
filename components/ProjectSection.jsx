@@ -111,7 +111,7 @@ const ProjectSection = () => {
   return (
     <div id="projects">
       <h4 className="!mb-10 !mt-20 lg:!mt-0 font-semibold text-2xl md:text-4xl !text-center text-pink-400">
-        my projects
+        My Projects
       </h4>
       {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
             <ProjectTag

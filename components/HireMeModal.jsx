@@ -52,24 +52,24 @@ const HireMeModal = (props) => {
           <a
             href="https://mail.google.com/mail/?view=cm&to=taniashafiee78@gmail.com"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            Email: taniashafiee78@gmail.com
+            <span className="text-gray-400">Email: </span>
+            <span className="font-semibold text-white">
+              taniashafiee78@gmail.com
+            </span>
           </a>
 
-          <Link
-            target="_blank"
-            href={"tel:100063"}
-            onClick={() => window.open("tel:100063")}
-          >
-            Phone: 09332080083
+          <Link target="_blank" href="tel:100063">
+            <span className="text-gray-400">Phone: </span>
+            <span className="font-semibold text-white">09332080083</span>
           </Link>
 
-          <Link
-            target="_blank"
-            href={"https://linkedin.com/in/tania-shafiee"}
-            onClick={() => window.open("https://linkedin.com/in/tania-shafiee")}
-          >
-            LinkedIn: linkedin.com/in/tania-shafiee
+          <Link target="_blank" href="https://linkedin.com/in/tania-shafiee">
+            <span className="text-gray-400">LinkedIn: </span>
+            <span className="font-semibold text-white">
+              linkedin.com/in/tania-shafiee
+            </span>
           </Link>
 
           <button
@@ -98,24 +98,24 @@ const HireMeModal = (props) => {
           <a
             href="https://mail.google.com/mail/?view=cm&to=taniashafiee78@gmail.com"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            Email: taniashafiee78@gmail.com
+            <span className="text-gray-300">Email: </span>
+            <span className="font-semibold text-white">
+              taniashafiee78@gmail.com
+            </span>
           </a>
 
-          <Link
-            target="_blank"
-            href={"tel:100063"}
-            onClick={() => window.open("tel:100063")}
-          >
-            Phone: 09332080083
+          <Link target="_blank" href="tel:100063">
+            <span className="text-gray-300">Phone: </span>
+            <span className="font-semibold text-white">09332080083</span>
           </Link>
 
-          <Link
-            target="_blank"
-            href={"https://linkedin.com/in/tania-shafiee"}
-            onClick={() => window.open("https://linkedin.com/in/tania-shafiee")}
-          >
-            LinkedIn: linkedin.com/in/tania-shafiee
+          <Link target="_blank" href="https://linkedin.com/in/tania-shafiee">
+            <span className="text-gray-300">LinkedIn: </span>
+            <span className="font-semibold text-white">
+              linkedin.com/in/tania-shafiee
+            </span>
           </Link>
 
           <button

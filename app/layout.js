@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${iranYekan.className} !bg-[#121212] min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${iranYekan.className} !bg-[#121212] min-h-screen scroll-smooth`}
       >
         <main className="max-w-[1580px] mx-auto">
           {children}

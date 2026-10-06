@@ -63,7 +63,7 @@ const AboutSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        About me
+        About Me
       </motion.h2>
 
       <motion.div
@@ -91,20 +91,12 @@ const AboutSection = () => {
           viewport={{ once: true }}
         >
           <p className="text-base lg:text-lg text-justify">
-            I am a passionate Front-End Developer with a strong focus on
-            building responsive, user-friendly web applications. Currently
-            working as a Junior Developer at Hoshmand Sepehr, I specialize in
-            using React, Next.js, and Tailwind CSS to create modern and scalable
-            web solutions. I have a deep understanding of JavaScript and
-            TypeScript, and I enjoy working with Redux and React Context API for
-            state management. With a keen interest in UI/UX design principles, I
-            strive to create visually appealing and intuitive interfaces that
-            enhance user experiences. As a constant learner, I am always eager
-            to stay updated with the latest front-end technologies and best
-            practices. I am passionate about problem-solving and collaborating
-            with teams to bring innovative ideas to life. Currently, I am
-            preparing to take the next step in my career by transitioning from a
-            junior to a mid-level
+            Frontend Developer with experience building and maintaining web
+            applications using React.js, Next.js, and TypeScript. Skilled in
+            developing reusable components, scalable frontend structures, Design
+            Systems, RESTful APIs, WebSocket/SignalR, and responsive user
+            interfaces, with a focus on clean code, maintainability, and user
+            experience.
           </p>
 
           <motion.div
@@ -118,13 +110,13 @@ const AboutSection = () => {
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              skills
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              education
+              Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("Experience")}

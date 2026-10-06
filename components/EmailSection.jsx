@@ -69,7 +69,7 @@ const EmailSection = () => {
         className="flex justify-center items-center font-semibold text-2xl md:text-4xl !text-center text-pink-400"
         variants={fadeUp}
       >
-        contact me
+        Contact Me
       </motion.h4>
 
       <motion.section className="w-full grid xl:grid-cols-2 py-12 !gap-6 md:gap-12 relative">
