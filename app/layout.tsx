@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import iranYekan from "../contracts/localFont";
-import Footer from "../components/Footer";
+import iranYekan from "@/contracts/localFont";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Portfolio",

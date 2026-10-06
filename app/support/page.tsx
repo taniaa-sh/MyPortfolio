@@ -1,9 +1,9 @@
 "use client";
 
-import React, { ReactNode, useState, useTransition } from "react";
-import Navbar from "../../components/Navbar";
-import Support from "../../components/Support";
-import TabButton from "../../components/TabButton";
+import { ReactNode, useState, useTransition } from "react";
+import Navbar from "@/components/Navbar";
+import Support from "@/components/Support";
+import TabButton from "@/components/TabButton";
 
 type TabId = "skills" | "education" | "Experience";
 
