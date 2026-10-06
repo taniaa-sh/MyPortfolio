@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const EmailSection = () => {
   const handleSubmit: React.ComponentProps<"form">["onSubmit"] = (event) => {
@@ -23,7 +23,7 @@ const EmailSection = () => {
     window.open(mailtoLink, "_blank");
   };
 
-  const container = {
+  const container: Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -32,7 +32,7 @@ const EmailSection = () => {
     },
   };
 
-  const itemLeft = {
+  const itemLeft: Variants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
       opacity: 1,
@@ -41,7 +41,7 @@ const EmailSection = () => {
     },
   };
 
-  const itemRight = {
+  const itemRight: Variants = {
     hidden: { opacity: 0, x: 50 },
     visible: {
       opacity: 1,
@@ -50,7 +50,7 @@ const EmailSection = () => {
     },
   };
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: -30 },
     visible: {
       opacity: 1,
