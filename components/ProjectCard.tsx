@@ -84,8 +84,8 @@ const ProjectCard = ({
             src={imgUrl}
             alt="project"
             className="!w-full !h-full object-fill"
-            width={10}
-            height={10}
+            width={500}
+            height={500}
           />
 
           <div
