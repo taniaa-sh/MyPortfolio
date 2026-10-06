@@ -21,13 +21,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${iranYekan.className} !bg-[#121212] min-h-screen scroll-smooth`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${iranYekan.className} !bg-[#121212] min-h-screen`}
       >
         <main className="max-w-[1580px] mx-auto">
           {children}
